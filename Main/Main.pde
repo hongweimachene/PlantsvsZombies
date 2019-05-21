@@ -1,6 +1,7 @@
 PImage image;
 peaShooter t;
 greenPea f;
+sunFlower s; 
 void setup(){
   size(1000,600);
   background(255);
@@ -27,12 +28,14 @@ void setup(){
   line(975,0,975,600); // x = 975
   t = new peaShooter(50,90,50,100);
   f = new greenPea(130,114,50);
+  s = new sunFlower(50, 190, 0, 100);
 } 
 
 void draw(){
   //image(image,-180,0);
   t.display(); 
   f.display();
+  s.display();
   //f.move();
   //t.move();
 }

@@ -27,7 +27,12 @@ class peaShooter extends Plants{
 }
 class sunFlower extends Plants{
   PImage sun;
-  sunFlower(int x, int y, int damage, int healht){
+  sunFlower(int x, int y, int damage, int health){
     super(x,y,damage,health);
+    sun = loadImage("sunflower.png");
+    sun.resize(80,80);
+  }
+  void display(){
+    image(sun,x,y);
   }
 }

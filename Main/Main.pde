@@ -30,9 +30,9 @@ void setup(){
   line(865,0,865,600); // x = 865
   line(975,0,975,600); // x = 975
   t = new peaShooter(50,90,50,100);
-  plant.add(t);
   f = new greenPea(130,114,50);
   s = new sunFlower(50, 190, 0, 100);
+  
 } 
 
 void draw(){

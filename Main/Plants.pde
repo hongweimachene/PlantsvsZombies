@@ -18,7 +18,7 @@ class peaShooter extends Plants{
   peaShooter(int x, int y, int damage, int health){
     super(x,y,damage,health);
     green = loadImage("peaShooter.png");
-    green.resize(100,100);
+    green.resize(80,80);
   }
   void display(){
     image(green,x,y);

@@ -1,5 +1,5 @@
 PImage image;
-peaShooter t = new peaShooter(500,300,50,100);
+peaShooter t;
 void setup(){
   size(1000,600);
   background(255);
@@ -24,9 +24,10 @@ void setup(){
   line(760,0,760,600); // x = 760
   line(865,0,865,600); // x = 865
   line(975,0,975,600); // x = 975
+  t = new peaShooter(100,130,50,100);
 } 
 
 void draw(){
-  //t.display(); 
+  t.display(); 
   //t.move();
 }

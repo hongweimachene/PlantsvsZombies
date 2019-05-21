@@ -8,10 +8,12 @@ class Zombies{
    this.health = health;
    this.damage = damage;
    this.speed = speed; 
+   pic = loadImage("zombie.png");
+   pic.resize(80,80);
   }
   
   void display(){
-    rect(x,y,50,100);
+    image(pic,x,y);
   }
   
   void move(){

@@ -1,5 +1,6 @@
 PImage image;
 peaShooter t;
+greenPea f;
 void setup(){
   size(1000,600);
   background(255);
@@ -24,10 +25,14 @@ void setup(){
   line(760,0,760,600); // x = 760
   line(865,0,865,600); // x = 865
   line(975,0,975,600); // x = 975
-  t = new peaShooter(100,130,50,100);
+  t = new peaShooter(50,90,50,100);
+  f = new greenPea(130,114,50);
 } 
 
 void draw(){
+  //image(image,-180,0);
   t.display(); 
+  f.display();
+  //f.move();
   //t.move();
 }

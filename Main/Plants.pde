@@ -22,5 +22,12 @@ class peaShooter extends Plants{
   }
   void display(){
     image(green,x,y);
-  } 
+    //rect(x,y,10,10);
+  }  
+}
+class sunFlower extends Plants{
+  PImage sun;
+  sunFlower(int x, int y, int damage, int healht){
+    super(x,y,damage,health);
+  }
 }

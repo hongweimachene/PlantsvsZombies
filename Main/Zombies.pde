@@ -1,5 +1,5 @@
 class Zombies{
-  int x,y,ealth,damage,speed;
+  int x,y,health,damage,speed;
   PImage pic;
   
   Zombies(int x, int y, int health, int damage, int speed) {

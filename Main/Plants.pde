@@ -1,4 +1,4 @@
-class Plants {
+abstract class Plants {
   int x, y, damage, health;
   PImage pic;
   Plants(int x, int y, int damage, int health) {
@@ -11,13 +11,16 @@ class Plants {
     health -= hurt;
     return health;
   }
-  void display() {
-    rect(x, y, 50, 50);
+  abstract void display();
+}
+class peaShooter extends Plants{
+   PImage green;
+  peaShooter(int x, int y, int damage, int health){
+    super(x,y,damage,health);
+    green = loadImage("peaShooter.png");
+    green.resize(100,100);
   }
-  void move() {
-    x += 10;
-    if (x > 1000) {
-      x = 0;
-    }
-  }
+  void display(){
+    image(green,x,y);
+  } 
 }

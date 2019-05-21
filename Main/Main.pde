@@ -1,9 +1,10 @@
 PImage image;
-peaShooter t;
-greenPea f;
-sunFlower s; 
+//peaShooter t;
+//greenPea f;
+//sunFlower s; 
 ArrayList<Plants> plant;
 void setup(){
+  plant = new ArrayList<Plants>();
   size(1000,600);
   background(255);
   image = loadImage("back.png");
@@ -29,14 +30,18 @@ void setup(){
   line(760,0,760,600); // x = 760
   line(865,0,865,600); // x = 865
   line(975,0,975,600); // x = 975
-  t = new peaShooter(50,90,50,100);
-  f = new greenPea(130,114,50);
-  s = new sunFlower(50, 190, 0, 100);
-  
+  peaShooter t = new peaShooter(50,90,50,100);
+  greenPea f = new greenPea(130,114,50);
+  sunFlower s = new sunFlower(50, 190, 0, 100);
+  plant.add(t);
+  plant.add(s);
 } 
 
 void draw(){
   //image(image,-180,0);
   //f.move();
   //t.move();
+  for(Plants p : plant){
+    p.display();
+  }
 }

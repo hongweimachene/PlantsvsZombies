@@ -2,14 +2,17 @@ PImage image;
 peaShooter t;
 greenPea f;
 sunFlower s; 
+ArrayList<Plants> plant;
 void setup(){
   size(1000,600);
   background(255);
   image = loadImage("back.png");
   image.resize(1380,600);
   image(image,-180,0);
+  fill(135,54,0);
+  rect(30,0,555,80);
   fill(155,89,182);
-  line(0,80,1380,100); // y = 80
+  line(0,80,1380,80); // y = 80
   line(0,178,1380,178); // y = 175
   line(0,278,1380,278); // y = 278
   line(0,378,1380,378); // y = 378
@@ -27,15 +30,13 @@ void setup(){
   line(865,0,865,600); // x = 865
   line(975,0,975,600); // x = 975
   t = new peaShooter(50,90,50,100);
+  plant.add(t);
   f = new greenPea(130,114,50);
   s = new sunFlower(50, 190, 0, 100);
 } 
 
 void draw(){
   //image(image,-180,0);
-  t.display(); 
-  f.display();
-  s.display();
   //f.move();
   //t.move();
 }

@@ -9,13 +9,13 @@ abstract class Bullet {
 }
 class greenPea extends Bullet {
   greenPea(int x, int y, int damage) {
-    super(x, y, damage);
+  super(x, y, damage);
   }
   void display() {
     fill(35, 155, 86);
     ellipse(x, y, 30, 30);
   }
-  void move() {
+ void move() {
     x += 5;
   }
 }

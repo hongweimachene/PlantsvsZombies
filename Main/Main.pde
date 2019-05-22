@@ -1,8 +1,5 @@
 PImage image;
 PImage shine;
-//peaShooter t;
-//greenPea f;
-//sunFlower s; 
 ArrayList<Plants> plant;
 ArrayList<Bullet> ammo;
 ArrayList<Sunlight> light;
@@ -19,8 +16,6 @@ void setup() {
   image = loadImage("back.png");
   image.resize(1380, 600);
   image(image, -180, 0);
-  fill(135, 54, 0);
-  rect(30, 0, 555, 80);
   fill(155, 89, 182);
   line(0, 80, 1380, 80); // y = 80
   line(0, 178, 1380, 178); // y = 175
@@ -42,25 +37,23 @@ void setup() {
   peaShooter t = new peaShooter(50, 90, 50, 100);
   peaShooter p = new peaShooter(50, 290, 50, 100);
   sunFlower s = new sunFlower(50, 190, 0, 100);
-  
+
   plant.add(t);
   plant.add(s);
   plant.add(p);
-  //s.giveSun();
 } 
 
 void draw() {
-  //background(0);
-  image(image,-180,0);
-  //f.move();
-  //t.move();
+  image(image, -180, 0);
+  fill(135, 54, 0);
+  rect(0, 0, 555, 80);
   for (Bullet b : ammo) {
     b.display();
     b.move();
   }
-  for (int index = 0; index < light.size(); index ++){
+  for (int index = 0; index < light.size(); index ++) {
     light.get(index).display();
-    if (light.get(index).isMouseNear(mouseX,mouseY)){
+    if (light.get(index).isMouseNear(mouseX, mouseY)) {
       light.remove(index);
       sunMoney += 50;
       index --;
@@ -72,11 +65,9 @@ void draw() {
     if (second % 5000.0 > 0.0 && second % 5000 < 15.0) {
       p.giveSun();
     }
-    //if (second % 1000.0 > 0.0 && second % 1000 < 15.0) {
-      p.attack();
-    //}
+    p.attack();
   }
-  textSize(32);
-  fill(0,102,153);
-  text(sunMoney, 10,30);
+  textSize(50);
+  fill(214, 234, 248);
+  text(sunMoney, 10, 50);
 }

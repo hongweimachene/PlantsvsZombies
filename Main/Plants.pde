@@ -32,7 +32,7 @@ class peaShooter extends Plants {
   }
   void attack(){
     if (time == 100){
-   greenPea b = new greenPea(x + 30,y + 20,10);
+   greenPea b = new greenPea(x + 60,y + 20,10);
    ammo.add(b);
    time = 0;
     }

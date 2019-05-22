@@ -1,12 +1,17 @@
 PImage image;
+PImage shine;
 //peaShooter t;
 //greenPea f;
 //sunFlower s; 
 ArrayList<Plants> plant;
 ArrayList<Bullet> ammo;
+ArrayList<Sunlight> light;
 void setup() {
+  shine = loadImage("sunlight.png");
+  shine.resize(50, 50);
   plant = new ArrayList<Plants>();
   ammo = new ArrayList<Bullet>();
+  light = new ArrayList<Sunlight>();
   size(1000, 600);
   background(255);
   image = loadImage("back.png");
@@ -33,7 +38,6 @@ void setup() {
   line(865, 0, 865, 600); // x = 865
   line(975, 0, 975, 600); // x = 975
   peaShooter t = new peaShooter(50, 90, 50, 100);
-  greenPea f = new greenPea(130, 114, 50);
   sunFlower s = new sunFlower(50, 190, 0, 100);
   plant.add(t);
   plant.add(s);
@@ -49,10 +53,13 @@ void draw() {
     b.display();
     b.move();
   }
+  for (Sunlight b : light) {
+    b.display();
+  }
   for (Plants p : plant) {
     p.display();
     double second = (double) millis();
-    if (second % 1000.0 > 0.0 && second % 1000 < 15.0) {
+    if (second % 5000.0 > 0.0 && second % 5000 < 15.0) {
       p.giveSun();
     }
     if (second % 1000.0 > 0.0 && second % 1000 < 15.0) {

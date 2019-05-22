@@ -40,14 +40,13 @@ class sunFlower extends Plants {
     super(x, y, damage, health);
     sun = loadImage("sunflower.png");
     sun.resize(80, 80);
-    sunlight = loadImage("sunlight.png");
-    sunlight.resize(50, 50);
   }
   void display() {
     image(sun, x, y);
   }
   void giveSun() {
-    image(sunlight, x + random(50) + 20, y - random(50));
+    Sunlight s = new Sunlight(x + 20 + (int)random(50), y - (int)random(50));
+    light.add(s);
   }
   void attack(){
   }

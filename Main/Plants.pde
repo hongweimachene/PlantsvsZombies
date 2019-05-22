@@ -17,10 +17,12 @@ abstract class Plants {
 }
 class peaShooter extends Plants {
   PImage green;
+  int time; 
   peaShooter(int x, int y, int damage, int health) {
     super(x, y, damage, health);
     green = loadImage("peaShooter.png");
     green.resize(80, 80);
+    time = (int)random(80);
   }
   void display() {
     image(green, x, y);
@@ -29,8 +31,14 @@ class peaShooter extends Plants {
   void giveSun() {
   }
   void attack(){
+    if (time == 100){
    greenPea b = new greenPea(x + 30,y + 20,10);
    ammo.add(b);
+   time = 0;
+    }
+    else{
+      time +=1;
+    }
   }
 }
 class sunFlower extends Plants {

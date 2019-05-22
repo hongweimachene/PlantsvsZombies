@@ -53,7 +53,7 @@ class sunFlower extends Plants {
     image(sun, x, y);
   }
   void giveSun() {
-    Sunlight s = new Sunlight(x + 20 + (int)random(50), y - (int)random(50));
+    Sunlight s = new Sunlight(x + 40 + (int)random(30), y - (int)random(50) - 10);
     light.add(s);
   }
   void attack(){

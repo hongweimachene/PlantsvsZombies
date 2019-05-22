@@ -3,6 +3,7 @@ PImage shine;
 ArrayList<Plants> plant;
 ArrayList<Bullet> ammo;
 ArrayList<Sunlight> light;
+Zombies z;
 int sunMoney;
 void setup() {
   shine = loadImage("sunlight.png");
@@ -41,6 +42,7 @@ void setup() {
   plant.add(t);
   plant.add(s);
   plant.add(p);
+  z = new Zombies(950, 50, 50, 10, 1);
 } 
 
 void draw() {
@@ -68,6 +70,8 @@ void draw() {
     p.attack();
   }
   textSize(50);
-  fill(214, 234, 248);
-  text(sunMoney, 10, 50);
+  fill(214,234,248);
+  text(sunMoney, 10,60);
+  z.display();
+  z.move();
 }

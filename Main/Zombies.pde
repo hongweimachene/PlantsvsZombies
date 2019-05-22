@@ -9,7 +9,7 @@ class Zombies{
    this.damage = damage;
    this.speed = speed; 
    pic = loadImage("zombie.png");
-   pic.resize(80,80);
+   pic.resize(80,120);
   }
   
   void display(){
@@ -17,6 +17,10 @@ class Zombies{
   }
   
   void move(){
-    x+=speed;
+    x-=speed;
   }
+  
+  void spawn(){
+  }
+    
 }

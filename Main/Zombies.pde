@@ -13,7 +13,9 @@ class Zombies{
   }
   
   void display(){
-    image(pic,x,y);
+    if (health > 0) {
+      image(pic,x,y);
+    }
   }
   
   void move(){
@@ -22,5 +24,13 @@ class Zombies{
   
   void spawn(){
   }
-    
+  
+  void takeDamage(){
+    for (int i = 0; i < ammo.size(); i++){
+      Bullet check = ammo.get(i);
+      if (dist(check.x,check.y,x,y) < 20){
+        health-=10;
+      }
+    }
+  }
 }

@@ -6,6 +6,7 @@ abstract class Bullet {
     this.damage = damage;
   }
   abstract void display();
+  abstract void move();
 }
 class greenPea extends Bullet {
   greenPea(int x, int y, int damage) {

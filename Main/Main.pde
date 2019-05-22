@@ -1,13 +1,20 @@
 PImage image;
 PImage shine;
+PImage SunSeed;
 ArrayList<Plants> plant;
 ArrayList<Bullet> ammo;
 ArrayList<Sunlight> light;
+boolean[][] tiles;
 Zombies z;
 int sunMoney;
+int mode; // 0  = not holding seed // 1 = holding sunFlower
 void setup() {
+  tiles = new boolean[5][9];
+  mode = 0;
   shine = loadImage("sunlight.png");
-  shine.resize(50, 50);
+  shine.resize(70, 70);
+  SunSeed = loadImage("sunSeed.png");
+  SunSeed.resize(100, 70);
   sunMoney = 0;
   plant = new ArrayList<Plants>();
   ammo = new ArrayList<Bullet>();
@@ -49,9 +56,14 @@ void draw() {
   image(image, -180, 0);
   fill(135, 54, 0);
   rect(0, 0, 555, 80);
-  for (Bullet b : ammo) {
-    b.display();
-    b.move();
+  image(SunSeed, 140, 0);
+  for (Plants p : plant) {
+    p.display();
+    double second = (double) millis();
+    if (second % 5000.0 > 0.0 && second % 5000 < 15.0) {
+      p.giveSun();
+    }
+    p.attack();
   }
   for (int index = 0; index < light.size(); index ++) {
     light.get(index).display();
@@ -61,17 +73,37 @@ void draw() {
       index --;
     }
   }
-  for (Plants p : plant) {
-    p.display();
-    double second = (double) millis();
-    if (second % 5000.0 > 0.0 && second % 5000 < 15.0) {
-      p.giveSun();
-    }
-    p.attack();
+  for (Bullet b : ammo) {
+    b.display();
+    b.move();
   }
   textSize(50);
-  fill(214,234,248);
-  text(sunMoney, 10,60);
+  fill(214, 234, 248);
+  text(sunMoney, 10, 60);
   z.display();
   z.move();
+  z.takeDamage();
+  if (mode == 1) {
+    fill(255);
+    rect(140, 0, 80, 80);
+  }
+}
+void mouseClicked() {
+  if (dist(mouseX, mouseY, 195, 30) < 55 && mode == 0) {
+    mode = 1;
+    return;
+  }
+  if (dist(mouseX, mouseY, 195, 30) < 55 && mode == 1) {
+    mode = 0;
+    return;
+  }
+  if (mouseY > 80 && mouseY < 578 && mouseX > 30 && mouseX < 975 && mode == 1) {
+    if (mouseX > 140 && mouseX < 240 && mouseY > 80 && mouseY < 175 && tiles[0][1] == false) {
+      sunFlower p = new sunFlower(150, 90, 0, 100);
+      plant.add(p);
+      mode = 0;
+      tiles[0][1] = true;
+      return;
+    }
+  }
 }

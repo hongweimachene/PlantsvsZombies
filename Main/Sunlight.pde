@@ -9,7 +9,7 @@ class Sunlight {
     image(shine, x, y);
   }
   boolean isMouseNear(int x, int y) {
-    if (dist(this.x, this.y, x, y) < 50 && mousePressed) {
+    if (dist(this.x + 35, this.y + 35, x, y) < 50 && mousePressed) {
       return true;
     } else {
       return false;

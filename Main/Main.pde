@@ -81,9 +81,12 @@ void draw() {
   textSize(50);
   fill(214, 234, 248);
   text(sunMoney, 10, 60);
-  double sec = (double) millis();
+  //double sec = (double) millis();
+  //if (sec % 4000.0 > 0.0 && sec % 4000 < 15.0) {
+  //    spawn();
+  //  }
   for (int i = 0; i < zombie.size();i++) {
-    if (zombie.get(i).health < 0) {
+    if (zombie.get(i).health <= 0) {
       zombie.remove(i);
     } else {
       zombie.get(i).display();

@@ -5,7 +5,7 @@ ArrayList<Plants> plant;
 ArrayList<Bullet> ammo;
 ArrayList<Sunlight> light;
 boolean[][] tiles;
-Zombies z;
+ArrayList<Zombies> zombie;
 int sunMoney;
 int mode; // 0  = not holding seed // 1 = holding sunFlower
 void setup() {
@@ -19,6 +19,7 @@ void setup() {
   plant = new ArrayList<Plants>();
   ammo = new ArrayList<Bullet>();
   light = new ArrayList<Sunlight>();
+  zombie = new ArrayList<Zombies>();
   size(1000, 600);
   background(255);
   image = loadImage("back.png");
@@ -49,7 +50,7 @@ void setup() {
   plant.add(t);
   plant.add(s);
   plant.add(p);
-  z = new Zombies(950, 50, 50, 10, 1);
+  spawn();
 } 
 
 void draw() {
@@ -80,9 +81,16 @@ void draw() {
   textSize(50);
   fill(214, 234, 248);
   text(sunMoney, 10, 60);
-  z.display();
-  z.move();
-  z.takeDamage();
+  double sec = (double) millis();
+  for (int i = 0; i < zombie.size();i++) {
+    if (zombie.get(i).health < 0) {
+      zombie.remove(i);
+    } else {
+      zombie.get(i).display();
+      zombie.get(i).move();
+      zombie.get(i).takeDamage();
+    }
+  }
   if (mode == 1) {
     fill(255);
     rect(140, 0, 80, 80);
@@ -107,3 +115,25 @@ void mouseClicked() {
     }
   }
 }
+
+void spawn(){
+    for (int i = 0; i < 5; i++){
+      int r = (int)random(5);
+      if (r == 0){
+        Zombies z = new Zombies(950,50,50,10,1);
+        zombie.add(z);
+      } else if (r == 1){
+        Zombies z = new Zombies(950,155,50,10,1);
+        zombie.add(z);
+      } else if (r== 2){
+        Zombies z = new Zombies(950,255,50,10,1);
+        zombie.add(z);
+      } else if (r==3){
+        Zombies z = new Zombies(950,353,50,10,1);
+        zombie.add(z);
+      } else if (r==4){
+        Zombies z = new Zombies(950,455,50,10,1);
+        zombie.add(z);
+      }
+    }
+  }

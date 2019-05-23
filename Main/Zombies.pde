@@ -13,41 +13,22 @@ class Zombies{
   }
   
   void display(){
-    if (health > 0) {
       image(pic,x,y);
-      text(health,x-10,y-20);
-    }
+      textSize(20);
+      text(health,x-10,y-10);
+      text("y",x,y);
   }
   
   void move(){
     x-=speed;
   }
   
-  void spawn(){
-    for (int i = 0; i < 8; i++){
-      int r = (int)random(5);
-      if (r == 0){
-        Zombies z = new Zombies(950,50,50,10,1);
-      } else if (r == 1){
-        Zombies z = new Zombies(950,205,50,10,1);
-      } else if (r== 2){
-        Zombies z = new Zombies(950,305,50,10,1);
-      } else if (r==3){
-        Zombies z = new Zombies(950,403,50,10,1);
-      } else if (r==4){
-        Zombies z = new Zombies(950,505,50,10,1);
-      }
-      zombie.add(z);
-    }
-  }
-  
   void takeDamage(){
     for (int i = 0; i < ammo.size(); i++){
       Bullet check = ammo.get(i);
-      if (dist(check.x,check.y,x,y) < 65){
+      if (dist(check.x,check.y,x,y+40) < 25){
         ammo.remove(i);
         health-=10;
- 
       }
     }
   }

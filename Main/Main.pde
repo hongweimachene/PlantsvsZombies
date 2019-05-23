@@ -2,6 +2,7 @@ PImage image;
 PImage shine;
 PImage SunSeed;
 PImage PeaShooterSeed;
+PImage picZomb;
 ArrayList<Plants> plant;
 ArrayList<Bullet> ammo;
 ArrayList<Sunlight> light;
@@ -25,6 +26,8 @@ void setup() {
   zombie = new ArrayList<Zombies>();
   size(1000, 600);
   background(255);
+  picZomb = loadImage("zombie.png");
+  picZomb.resize(80,120);
   image = loadImage("back.png");
   image.resize(1380, 600);
   image(image, -180, 0);
@@ -53,7 +56,6 @@ void setup() {
   //plant.add(t);
   //plant.add(s);
   //plant.add(p);
-  spawn();
 } 
 
 void draw() {
@@ -85,10 +87,11 @@ void draw() {
   textSize(50);
   fill(214, 234, 248);
   text(sunMoney, 10, 60);
-  double sec = (double) millis();
-  if (sec % 4500.0 > 0.0 && sec % 4500 < 15.0) {
-    spawn();
-  }
+  spawn1();
+  spawn2();
+  spawn3();
+  spawn4();
+  spawn5();
   for (int i = 0; i < zombie.size(); i++) {
     if (zombie.get(i).health <= 0) {
       zombie.remove(i);
@@ -256,28 +259,6 @@ void mouseClicked() {
     }
   }
 }
-
-void spawn() {
-  for (int i = 0; i < 5; i++) {
-    int r = (int)random(5);
-    if (r == 0) {
-      Zombies z = new Zombies(950, 50, 50, 10, 1);
-      zombie.add(z);
-    } else if (r == 1) {
-      Zombies z = new Zombies(950, 155, 50, 10, 1);
-      zombie.add(z);
-    } else if (r== 2) {
-      Zombies z = new Zombies(950, 255, 50, 10, 1);
-      zombie.add(z);
-    } else if (r==3) {
-      Zombies z = new Zombies(950, 353, 50, 10, 1);
-      zombie.add(z);
-    } else if (r==4) {
-      Zombies z = new Zombies(950, 455, 50, 10, 1);
-      zombie.add(z);
-    }
-  }
-}
 void createPlant(int x, int y, int damage, int health, int type) {
   if (type == 1) {
     sunFlower b = new sunFlower (x, y, damage, health);
@@ -292,3 +273,38 @@ void createPlant(int x, int y, int damage, int health, int type) {
     return;
   }
 }
+ void spawn1(){
+   int s = millis();
+   if (s % (int)random(1000,2001) == 0){
+     Zombies z = new Zombies(950, 50, 50, 10, 1);
+     zombie.add(z);
+   }
+ }
+ void spawn2(){
+   int s = millis();
+   if (s % (int)random(800, 1001) == 0){
+     Zombies z = new Zombies(950, 155, 50, 10, 1);
+     zombie.add(z);
+   }
+ }
+ void spawn3(){
+   int s = millis();
+   if (s % (int)random(800,1001) == 0){
+     Zombies z = new Zombies(950, 255, 50, 10, 1);
+     zombie.add(z);
+   }
+ }
+ void spawn4(){
+   int s = millis();
+   if (s % (int)random(8000,1001) == 0){
+     Zombies z = new Zombies(950, 353, 50, 10, 1);
+     zombie.add(z);
+   }
+ }
+ void spawn5(){
+   int s = millis();
+   if (s % (int)random(800,1001) == 0){
+     Zombies z = new Zombies(950, 455, 50, 10, 1);
+     zombie.add(z);
+   }
+ }

@@ -37,7 +37,7 @@ class Zombies{
       } else if (r==4){
         Zombies z = new Zombies(950,505,50,10,1);
       }
-      zombie.add(z);
+      //zombie.add(z);
     }
   }
   

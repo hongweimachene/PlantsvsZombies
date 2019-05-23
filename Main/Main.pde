@@ -85,11 +85,11 @@ void draw() {
   z.takeDamage();
   if (mode == 1) {
     fill(255);
-    rect(140, 0, 80, 80);
+    rect(135, 0, 100, 70);
   }
 }
 void mouseClicked() {
-  if (dist(mouseX, mouseY, 195, 30) < 55 && mode == 0) {
+  if (dist(mouseX, mouseY, 195, 30) < 55 && mode == 0){
     mode = 1;
     return;
   }

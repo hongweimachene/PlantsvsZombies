@@ -1,11 +1,12 @@
 PImage image;
 PImage shine;
 PImage SunSeed;
+PImage PeaShooterSeed;
 ArrayList<Plants> plant;
 ArrayList<Bullet> ammo;
 ArrayList<Sunlight> light;
-boolean[][] tiles;
 ArrayList<Zombies> zombie;
+boolean[][] tiles;
 int sunMoney;
 int mode; // 0  = not holding seed // 1 = holding sunFlower
 void setup() {
@@ -13,6 +14,8 @@ void setup() {
   mode = 0;
   shine = loadImage("sunlight.png");
   shine.resize(70, 70);
+  PeaShooterSeed = loadImage("peaShooterSeed.png");
+  PeaShooterSeed.resize(100,70);
   SunSeed = loadImage("sunSeed.png");
   SunSeed.resize(100, 70);
   sunMoney = 0;
@@ -58,6 +61,7 @@ void draw() {
   fill(135, 54, 0);
   rect(0, 0, 555, 80);
   image(SunSeed, 140, 0);
+  image(PeaShooterSeed,240,0);
   for (Plants p : plant) {
     p.display();
     double second = (double) millis();
@@ -156,6 +160,57 @@ void mouseClicked() {
             plant.add(p);
             mode = 0;
             tiles[4][0] = true;
+            return;
+          }
+        }
+      }
+      if (mouseX > 140 && mouseX < 240) { // is the mouse cursor in colulm 2 
+      if (mouseY > 80 && mouseY < 175 && tiles[0][1] == false) { // [0][1]
+        if (mode == 1) {
+          sunFlower p = new sunFlower(150, 90, 0, 100);
+          plant.add(p);
+          mode = 0;
+          tiles[0][1] = true;
+          return;
+        }
+      }
+      if (mouseY > 175 && mouseY < 278 && tiles[1][1] == false) { // [1][1]
+        if (mode == 1) {
+          sunFlower p = new sunFlower(150, 190, 0, 100);
+          plant.add(p);
+          mode = 0;
+          tiles[1][1] = true;
+          return;
+        }
+      }
+      if (mouseY > 287 && mouseY < 387 && tiles[2][1] == false) { // [2][1]
+        if (mode == 1) {
+          sunFlower p = new sunFlower(150, 290, 0, 100);
+          plant.add(p);
+          mode = 0;
+          tiles[2][1] = true;
+          return;
+        }
+      }
+      if (mouseY < 476 && mouseY > 378 && tiles[3][1] == false) {// [3][1]
+        //rect(0,0,100,100);
+        if (mode == 1) {
+          //rect(0,0,100,100);
+          sunFlower p = new sunFlower(150, 390, 0, 100);
+          plant.add(p);
+          mode = 0;
+          tiles[3][1] = true;
+          return;
+        }
+      }
+        if (mouseY < 578 && mouseY > 476 && tiles[4][1] == false) {// [4][1]
+          //rect(0,0,100,100);
+          if (mode == 1) {
+            //rect(0,0,100,100);
+            sunFlower p = new sunFlower(150, 490, 0, 100);
+            plant.add(p);
+            mode = 0;
+            tiles[4][1] = true;
             return;
           }
         }

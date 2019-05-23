@@ -43,13 +43,13 @@ void setup() {
   line(760, 0, 760, 600); // x = 760
   line(865, 0, 865, 600); // x = 865
   line(975, 0, 975, 600); // x = 975
-  peaShooter t = new peaShooter(50, 90, 50, 100);
-  peaShooter p = new peaShooter(50, 290, 50, 100);
-  sunFlower s = new sunFlower(50, 190, 0, 100);
+  //peaShooter t = new peaShooter(50, 90, 50, 100);
+  //peaShooter p = new peaShooter(50, 290, 50, 100);
+  //sunFlower s = new sunFlower(50, 190, 0, 100);
 
-  plant.add(t);
-  plant.add(s);
-  plant.add(p);
+  //plant.add(t);
+  //plant.add(s);
+  //plant.add(p);
   spawn();
 } 
 
@@ -81,11 +81,11 @@ void draw() {
   textSize(50);
   fill(214, 234, 248);
   text(sunMoney, 10, 60);
-    double sec = (double) millis();
+  double sec = (double) millis();
   if (sec % 4500.0 > 0.0 && sec % 4500 < 15.0) {
-      spawn();
-    }
-  for (int i = 0; i < zombie.size();i++) {
+    spawn();
+  }
+  for (int i = 0; i < zombie.size(); i++) {
     if (zombie.get(i).health <= 0) {
       zombie.remove(i);
     } else {
@@ -100,43 +100,87 @@ void draw() {
   }
 }
 void mouseClicked() {
-  if (dist(mouseX, mouseY, 195, 30) < 55 && mode == 0){
+  if (dist(mouseX, mouseY, 195, 30) < 40 && mode == 0) {
     mode = 1;
     return;
   }
-  if (dist(mouseX, mouseY, 195, 30) < 55 && mode == 1) {
+  if (dist(mouseX, mouseY, 195, 30) < 40 && mode == 1) {
     mode = 0;
     return;
   }
-  if (mouseY > 80 && mouseY < 578 && mouseX > 30 && mouseX < 975 && mode == 1) {
-    if (mouseX > 140 && mouseX < 240 && mouseY > 80 && mouseY < 175 && tiles[0][1] == false) {
-      sunFlower p = new sunFlower(150, 90, 0, 100);
-      plant.add(p);
-      mode = 0;
-      tiles[0][1] = true;
-      return;
-    }
-  }
-}
-
-void spawn(){
-    for (int i = 0; i < 5; i++){
-      int r = (int)random(5);
-      if (r == 0){
-        Zombies z = new Zombies(950,50,50,10,1);
-        zombie.add(z);
-      } else if (r == 1){
-        Zombies z = new Zombies(950,155,50,10,1);
-        zombie.add(z);
-      } else if (r== 2){
-        Zombies z = new Zombies(950,255,50,10,1);
-        zombie.add(z);
-      } else if (r==3){
-        Zombies z = new Zombies(950,353,50,10,1);
-        zombie.add(z);
-      } else if (r==4){
-        Zombies z = new Zombies(950,455,50,10,1);
-        zombie.add(z);
+  if (mouseY > 80 && mouseY < 578 && mouseX > 30 && mouseX < 975) { //is the mouse cursor on the map
+    if (mouseX < 140) { // is the mouse cursor in colulm 1 
+      if (mouseY > 80 && mouseY < 175 && tiles[0][0] == false) { // [0][0]
+        if (mode == 1) {
+          sunFlower p = new sunFlower(50, 90, 0, 100);
+          plant.add(p);
+          mode = 0;
+          tiles[0][0] = true;
+          return;
+        }
+      }
+      if (mouseY > 175 && mouseY < 278 && tiles[1][0] == false) { // [1][0]
+        if (mode == 1) {
+          sunFlower p = new sunFlower(50, 190, 0, 100);
+          plant.add(p);
+          mode = 0;
+          tiles[1][0] = true;
+          return;
+        }
+      }
+      if (mouseY > 287 && mouseY < 387 && tiles[2][0] == false) { // [2][0]
+        if (mode == 1) {
+          sunFlower p = new sunFlower(50, 290, 0, 100);
+          plant.add(p);
+          mode = 0;
+          tiles[2][0] = true;
+          return;
+        }
+      }
+      if (mouseY < 476 && mouseY > 378 && tiles[3][0] == false) {// [3][0]
+        //rect(0,0,100,100);
+        if (mode == 1) {
+          //rect(0,0,100,100);
+          sunFlower p = new sunFlower(50, 390, 0, 100);
+          plant.add(p);
+          mode = 0;
+          tiles[3][0] = true;
+          return;
+        }
+      }
+        if (mouseY < 578 && mouseY > 476 && tiles[4][0] == false) {// [4][0]
+          //rect(0,0,100,100);
+          if (mode == 1) {
+            //rect(0,0,100,100);
+            sunFlower p = new sunFlower(50, 490, 0, 100);
+            plant.add(p);
+            mode = 0;
+            tiles[4][0] = true;
+            return;
+          }
+        }
       }
     }
   }
+
+void spawn() {
+  for (int i = 0; i < 5; i++) {
+    int r = (int)random(5);
+    if (r == 0) {
+      Zombies z = new Zombies(950, 50, 50, 10, 1);
+      zombie.add(z);
+    } else if (r == 1) {
+      Zombies z = new Zombies(950, 155, 50, 10, 1);
+      zombie.add(z);
+    } else if (r== 2) {
+      Zombies z = new Zombies(950, 255, 50, 10, 1);
+      zombie.add(z);
+    } else if (r==3) {
+      Zombies z = new Zombies(950, 353, 50, 10, 1);
+      zombie.add(z);
+    } else if (r==4) {
+      Zombies z = new Zombies(950, 455, 50, 10, 1);
+      zombie.add(z);
+    }
+  }
+}

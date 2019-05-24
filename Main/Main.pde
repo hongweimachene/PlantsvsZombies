@@ -510,35 +510,35 @@ void createPlant(int x, int y, int damage, int health, int type) { // 1: sunflow
 }
  void spawn1(){
    int s = millis();
-   if (s % (int)random(1000,2001) == 0){
+   if (s % (int)random(800,2001) == 0){
      Zombies z = new Zombies(950, 50, 50, 10, 1);
      zombie.add(z);
    }
  }
  void spawn2(){
    int s = millis();
-   if (s % (int)random(800, 1001) == 0){
+   if (s % (int)random(1000, 2001) == 0){
      Zombies z = new Zombies(950, 155, 50, 10, 1);
      zombie.add(z);
    }
  }
  void spawn3(){
    int s = millis();
-   if (s % (int)random(800,1001) == 0){
+   if (s % (int)random(1000,2001) == 0){
      Zombies z = new Zombies(950, 255, 50, 10, 1);
      zombie.add(z);
    }
  }
  void spawn4(){
    int s = millis();
-   if (s % (int)random(8000,1001) == 0){
+   if (s % (int)random(1000,2001) == 0){
      Zombies z = new Zombies(950, 353, 50, 10, 1);
      zombie.add(z);
    }
  }
  void spawn5(){
    int s = millis();
-   if (s % (int)random(800,1001) == 0){
+   if (s % (int)random(1000,2001) == 0){
      Zombies z = new Zombies(950, 455, 50, 10, 1);
      zombie.add(z);
    }

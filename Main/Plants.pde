@@ -25,6 +25,9 @@ class peaShooter extends Plants {
     time = (int)random(80);
   }
   void display() {
+    textSize(20);
+    fill(255);
+    text(health, x+ 10, y -10 );
     image(green, x, y);
     //rect(x,y,10,10);
   }
@@ -50,6 +53,9 @@ class sunFlower extends Plants {
     sun.resize(80, 80);
   }
   void display() {
+    textSize(20);
+    fill(255);
+    text(health, x+ 10, y-10 );
     image(sun, x, y);
   }
   void giveSun() {

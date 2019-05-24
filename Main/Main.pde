@@ -257,9 +257,137 @@ void mouseClicked() {
         }
       }
     }
+    if (mouseX > 240 && mouseX < 350) { // is the mouse cursor in colulm 3 
+      if (mouseY > 80 && mouseY < 175 && tiles[0][2] == false) { // [0][2]
+        if (mode == 1) {
+          createPlant(250, 90, 0, 100, 1);
+          tiles[0][2] = true;
+          return;
+        }
+        if (mode == 2) {
+          createPlant(250, 90, 0, 100, 2);
+          tiles[0][2] = true;
+          return;
+        }
+      }
+      if (mouseY > 175 && mouseY < 278 && tiles[1][2] == false) { // [1][2]
+        if (mode == 1) {
+          createPlant(250, 190, 0, 100, 1);
+          tiles[1][2] = true;
+          return;
+        }
+        if (mode == 2) {
+          createPlant(250, 190, 0, 100, 2);
+          tiles[1][2] = true;
+          return;
+        }
+      }
+      if (mouseY > 287 && mouseY < 387 && tiles[2][2] == false) { // [2][2]
+        if (mode == 1) {
+          createPlant(250, 290, 0, 100, 1);
+          tiles[2][2] = true;
+          return;
+        }
+        if (mode == 2) {
+          createPlant(250, 290, 0, 100, 2);
+          tiles[2][2] = true;
+          return;
+        }
+      }
+      if (mouseY < 476 && mouseY > 378 && tiles[3][1] == false) {// [3][2]
+        //rect(0,0,00,100);
+        if (mode == 1) {
+          createPlant(250, 390, 0, 100, 1);
+          tiles[3][2] = true;
+          return;
+        }
+        if (mode == 2) {
+          createPlant(250, 390, 0, 100, 2);
+          tiles[3][2] = true;
+          return;
+        }
+      }
+      if (mouseY < 578 && mouseY > 476 && tiles[4][2] == false) {// [4][2]
+        //rect(0,0,100,100);
+        if (mode == 1) {
+          createPlant(250, 490, 0, 100, 1);
+          tiles[4][2] = true;
+          return;
+        }
+        if (mode == 2) {
+          createPlant(250, 490, 0, 100, 2);
+          tiles[4][2] = true;
+          return;
+        }
+      }
+    }
+    if (mouseX > 350 && mouseX < 450) { // is the mouse cursor in colulm 4 
+      if (mouseY > 80 && mouseY < 175 && tiles[0][3] == false) { // [0][3]
+        if (mode == 1) {
+          createPlant(370, 90, 0, 100, 1);
+          tiles[0][3] = true;
+          return;
+        }
+        if (mode == 2) {
+          createPlant(370, 90, 0, 100, 2);
+          tiles[0][3] = true;
+          return;
+        }
+      }
+      if (mouseY > 175 && mouseY < 278 && tiles[1][3] == false) { // [1][3]
+        if (mode == 1) {
+          createPlant(370, 190, 0, 100, 1);
+          tiles[1][3] = true;
+          return;
+        }
+        if (mode == 2) {
+          createPlant(370, 190, 0, 100, 2);
+          tiles[1][3] = true;
+          return;
+        }
+      }
+      if (mouseY > 287 && mouseY < 387 && tiles[2][3] == false) { // [2][3]
+        if (mode == 1) {
+          createPlant(370, 290, 0, 100, 1);
+          tiles[2][3] = true;
+          return;
+        }
+        if (mode == 2) {
+          createPlant(370, 290, 0, 100, 2);
+          tiles[2][3] = true;
+          return;
+        }
+      }
+      if (mouseY < 476 && mouseY > 378 && tiles[3][3] == false) {// [3][3]
+        //rect(0,0,00,100);
+        if (mode == 1) {
+          createPlant(370, 390, 0, 100, 1);
+          tiles[3][3] = true;
+          return;
+        }
+        if (mode == 2) {
+          createPlant(370, 390, 0, 100, 2);
+          tiles[3][3] = true;
+          return;
+        }
+      }
+      if (mouseY < 578 && mouseY > 476 && tiles[4][3] == false) {// [4][3]
+        //rect(0,0,100,100);
+        if (mode == 1) {
+          createPlant(370, 490, 0, 100, 1);
+          tiles[4][3] = true;
+          return;
+        }
+        if (mode == 2) {
+          createPlant(370, 490, 0, 100, 2);
+          tiles[4][3] = true;
+          return;
+        }
+      }
+    }
   }
 }
-void createPlant(int x, int y, int damage, int health, int type) {
+void createPlant(int x, int y, int damage, int health, int type) { // 1: sunflower 2: peashooter
   if (type == 1) {
     sunFlower b = new sunFlower (x, y, damage, health);
     plant.add(b);

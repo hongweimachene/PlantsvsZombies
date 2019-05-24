@@ -86,6 +86,11 @@ void draw() {
       index --;
     }
   }
+  for (int i = 0; i < ammo.size(); i++){
+    if (ammo.get(i).x > 1000){
+      ammo.remove(i);
+    }
+  }
   for (Bullet b : ammo) {
     b.display();
     b.move();

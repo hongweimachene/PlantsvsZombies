@@ -34,9 +34,10 @@ class Zombies{
   
   boolean isNextToPlant(){
     for (Plants x: plant){
-      if (dist(x.x,x.y,x,y+40) < 10){
+      if (dist(x.x,x.y,this.x,this.y+40) < 10){
         return true;
       }
     }
+    return false;
   }
 }

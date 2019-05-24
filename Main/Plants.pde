@@ -1,11 +1,13 @@
 abstract class Plants {
-  int x, y, damage, health;
+  int x, y, damage, health,fakeX,fakeY;
   PImage pic;
-  Plants(int x, int y, int damage, int health) {
+  Plants(int x, int y, int damage, int health,int fakeX, int fakeY) {
     this.x=x;
     this.y=y;
     this.damage=damage;
     this.health=health;
+    this.fakeX = fakeX;
+    this.fakeY = fakeY;
   }
   int takeDamage(int hurt) {
     health -= hurt;
@@ -18,8 +20,8 @@ abstract class Plants {
 class peaShooter extends Plants {
   PImage green;
   int time; 
-  peaShooter(int x, int y, int damage, int health) {
-    super(x, y, damage, health);
+  peaShooter(int x, int y, int damage, int health, int fakeX, int fakeY) {
+    super(x, y, damage, health,fakeX,fakeY);
     green = loadImage("peaShooter.png");
     green.resize(80, 80);
     time = (int)random(80);
@@ -44,8 +46,8 @@ class peaShooter extends Plants {
 class sunFlower extends Plants {
   PImage sun;
   PImage sunlight;
-  sunFlower(int x, int y, int damage, int health) {
-    super(x, y, damage, health);
+  sunFlower(int x, int y, int damage, int health,int fakeX, int fakeY) {
+    super(x, y, damage, health,fakeX,fakeY);
     sun = loadImage("sunflower.png");
     sun.resize(80, 80);
   }

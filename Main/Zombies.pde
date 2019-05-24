@@ -34,7 +34,7 @@ class Zombies{
   
   boolean onTopOfPlant(){
     for (Plants i: plant){
-      if (dist(i.x,i.y,x,y+4) < 10){
+      if (dist(i.x,i.y,x,y+40) < 10){
         return true;
       }
     }

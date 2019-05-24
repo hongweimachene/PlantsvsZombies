@@ -97,7 +97,8 @@ void draw() {
       zombie.remove(i);
     } else {
       zombie.get(i).display();
-      if (!zombie.get(i).isNextToPlant()) zombie.get(i).move();
+      if (!zombie.get(i).onTopOfPlant()) zombie.get(i).move();
+      zombie.get(i).dealDamage();
       zombie.get(i).takeDamage();
     }
   }

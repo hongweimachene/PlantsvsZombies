@@ -291,6 +291,45 @@ void mouseClicked() {
         }
       }
     }
+    if (mouseX > 450 && mouseX < 555) { // is the mouse cursor in colulm 5 
+      if (mouseY > 80 && mouseY < 175 && tiles[0][4] == false) { // [0][4]
+        if (mode != 0) {
+          createPlant(470, 90, 0, 100, mode);
+          tiles[0][4] = true;
+          return;
+        }
+      }
+      if (mouseY > 175 && mouseY < 278 && tiles[1][4] == false) { // [1][4]
+        if (mode != 0) {
+          createPlant(470, 190, 0, 100, mode);
+          tiles[1][4] = true;
+          return;
+        }
+      }
+      if (mouseY > 287 && mouseY < 387 && tiles[2][4] == false) { // [2][4]
+        if (mode != 0) {
+          createPlant(470, 290, 0, 100, mode);
+          tiles[2][4] = true;
+          return;
+        }
+      }
+      if (mouseY < 476 && mouseY > 378 && tiles[3][4] == false) {// [3][4]
+        //rect(0,0,00,100);
+        if (mode != 0) {
+          createPlant(470, 390, 0, 100, mode);
+          tiles[3][4] = true;
+          return;
+        }
+      }
+      if (mouseY < 578 && mouseY > 476 && tiles[4][4] == false) {// [4][4]
+        //rect(0,0,100,100);
+        if (mode != 0) {
+          createPlant(470, 490, 0, 100, mode);
+          tiles[4][4] = true;
+          return;
+        }
+      }
+    }
   }
 }
 void createPlant(int x, int y, int damage, int health, int type) { // 1: sunflower 2: peashooter

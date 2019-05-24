@@ -1,6 +1,7 @@
 PImage image;
 PImage shine;
 PImage SunSeed;
+PImage nutSeed;
 PImage PeaShooterSeed;
 PImage picZomb;
 ArrayList<Plants> plant;
@@ -13,13 +14,15 @@ int mode; // 0  = not holding seed // 1 = holding sunFlower
 void setup() {
   tiles = new boolean[5][9];
   mode = 0;
+  nutSeed = loadImage("wallNut Seed.png");
+  nutSeed.resize(100,70);
   shine = loadImage("sunlight.png");
   shine.resize(70, 70);
   PeaShooterSeed = loadImage("peaShooterSeed.png");
   PeaShooterSeed.resize(100, 70);
   SunSeed = loadImage("sunSeed.png");
   SunSeed.resize(100, 70);
-  sunMoney = 0;
+  sunMoney = 200;
   plant = new ArrayList<Plants>();
   ammo = new ArrayList<Bullet>();
   light = new ArrayList<Sunlight>();
@@ -64,6 +67,7 @@ void draw() {
   rect(0, 0, 555, 80);
   image(SunSeed, 140, 0);
   image(PeaShooterSeed, 240, 0);
+  image(nutSeed,340,0);
   for (int i = 0; i < plant.size(); i++){
     if (plant.get(i).health <= 0){
       tiles[plant.get(i).fakeX][plant.get(i).fakeY] = false;
@@ -121,6 +125,10 @@ void draw() {
     fill(255);
     rect(235, 0, 100, 70);
   }
+  if (mode == 3) {
+    fill(255);
+    rect(335, 0, 100, 70);
+  }
 }
 void mouseClicked() {
   if (dist(mouseX, mouseY, 195, 30) < 40 && mode == 0) {
@@ -136,6 +144,14 @@ void mouseClicked() {
     return;
   }
   if (dist(mouseX, mouseY, 290, 30) < 40 && mode != 0) {
+    mode = 0;
+    return;
+  }
+  if (dist(mouseX, mouseY, 390, 30) < 40 && mode == 0) {
+    mode = 3;
+    return;
+  }
+  if (dist(mouseX, mouseY, 390, 30) < 40 && mode != 0) {
     mode = 0;
     return;
   }
@@ -241,7 +257,7 @@ void mouseClicked() {
           return;
         }
       }
-      if (mouseY < 476 && mouseY > 378 && tiles[3][1] == false) {// [3][2]
+      if (mouseY < 476 && mouseY > 378 && tiles[3][2] == false) {// [3][2]
         //rect(0,0,00,100);
         if (mode != 0) {
           createPlant(260, 390, 0, 100, mode,3,2);
@@ -456,21 +472,21 @@ void mouseClicked() {
     if (mouseX > 865 && mouseX < 975) { // is the mouse cursor in colulm 9 
       if (mouseY > 80 && mouseY < 175 && tiles[0][8] == false) { // [0][8]
         if (mode != 0) {
-          createPlant(870, 90, 0, 100, mode,0,8);
+          createPlant(885, 90, 0, 100, mode,0,8);
           tiles[0][8] = true;
           return;
         }
       }
       if (mouseY > 175 && mouseY < 278 && tiles[1][8] == false) { // [1][8]
         if (mode != 0) {
-          createPlant(870, 190, 0, 100, mode,1,8);
+          createPlant(885, 190, 0, 100, mode,1,8);
           tiles[1][8] = true;
           return;
         }
       }
       if (mouseY > 287 && mouseY < 387 && tiles[2][8] == false) { // [2][8]
         if (mode != 0) {
-          createPlant(870, 290, 0, 100, mode,2,8);
+          createPlant(885, 290, 0, 100, mode,2,8);
           tiles[2][8] = true;
           return;
         }
@@ -478,7 +494,7 @@ void mouseClicked() {
       if (mouseY < 476 && mouseY > 378 && tiles[3][8] == false) {// [3][8]
         //rect(0,0,00,100);
         if (mode != 0) {
-          createPlant(870, 390, 0, 100, mode,3,8);
+          createPlant(885, 390, 0, 100, mode,3,8);
           tiles[3][8] = true;
           return;
         }
@@ -486,7 +502,7 @@ void mouseClicked() {
       if (mouseY < 578 && mouseY > 476 && tiles[4][8] == false) {// [4][8]
         //rect(0,0,100,100);
         if (mode != 0) {
-          createPlant(870, 490, 0, 100, mode,4,8);
+          createPlant(885, 490, 0, 100, mode,4,8);
           tiles[4][8] = true;
           return;
         }
@@ -495,14 +511,23 @@ void mouseClicked() {
   }
 }
 void createPlant(int x, int y, int damage, int health, int type, int fakeX, int fakeY) { // 1: sunflower 2: peashooter
-  if (type == 1) {
+  if (type == 1 ){//&& sunMoney >= 50) {
+    //sunMoney -= 50;
     sunFlower b = new sunFlower (x, y, damage, health,fakeX,fakeY);
     plant.add(b);
     mode = 0;
     return;
   }
-  if (type == 2) {
+  if (type == 2 ){//&& sunMoney >= 100) {
+    //sunMoney -= 100;
     peaShooter b = new peaShooter (x, y, damage, health,fakeX, fakeY);
+    plant.add(b);
+    mode = 0;
+    return;
+  }
+  if (type == 3){ //&& sunMoney >= 50) {
+    //sunMoney -= 50;
+    wallNut b = new wallNut (x, y, damage, 1000,fakeX, fakeY);
     plant.add(b);
     mode = 0;
     return;

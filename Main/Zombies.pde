@@ -15,6 +15,7 @@ class Zombies{
       textSize(20);
       text(health,x-10,y-10);
       text("y",x,y);
+      text("box",x+20,y+60);
   }
   
   void move(){
@@ -25,7 +26,7 @@ class Zombies{
   void takeDamage(){
     for (int i = 0; i < ammo.size(); i++){
       Bullet check = ammo.get(i);
-      if (dist(check.x,check.y,x,y+40) < 25){
+      if (dist(check.x,check.y,x+30,y+60) < 25){
         ammo.remove(i);
         health-=10;
       }
@@ -34,7 +35,7 @@ class Zombies{
   
   boolean onTopOfPlant(){
     for (Plants i: plant){
-      if (dist(i.x,i.y,x,y+40) < 10){
+      if (dist(i.x,i.y,x,y+40) < 20){
         return true;
       }
     }
@@ -42,7 +43,7 @@ class Zombies{
   }
   
   boolean isNextToPlant(Plants i){
-    if (dist(i.x,i.y,this.x,this.y+40) < 10){
+    if (dist(i.x,i.y,this.x,this.y+40) < 20){
        return true;
     }
     return false;

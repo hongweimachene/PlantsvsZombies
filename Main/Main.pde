@@ -137,63 +137,38 @@ void mouseClicked() {
   if (mouseY > 80 && mouseY < 578 && mouseX > 30 && mouseX < 975) { //is the mouse cursor on the map
     if (mouseX < 140) { // is the mouse cursor in colulm 1 
       if (mouseY > 80 && mouseY < 175 && tiles[0][0] == false) { // [0][0]
-        if (mode == 1) {
-          createPlant(50, 90, 0, 100, 1);
-          tiles[0][0] = true;
-          return;
-        }
-        if (mode == 2) {
-          createPlant(50, 90, 0, 100, 2);
+        if (mode != 0) {
+          createPlant(50, 90, 0, 100, mode);
           tiles[0][0] = true;
           return;
         }
       }
       if (mouseY > 175 && mouseY < 278 && tiles[1][0] == false) { // [1][0]
-        if (mode == 1) {
-          createPlant(50, 190, 0, 100, 1);
-          tiles[1][0] = true;
-          return;
-        }
-        if (mode == 2) {
-          createPlant(50, 190, 0, 100, 2);
+        if (mode != 0) {
+          createPlant(50, 190, 0, 100, mode);
           tiles[1][0] = true;
           return;
         }
       }
       if (mouseY > 287 && mouseY < 387 && tiles[2][0] == false) { // [2][0]
-        if (mode == 1) {
-          createPlant(50, 290, 0, 100, 1);
-          tiles[2][0] = true;
-          return;
-        }
-        if (mode == 2) {
-          createPlant(50, 290, 0, 100, 2);
+        if (mode != 0) {
+          createPlant(50, 290, 0, 100, mode);
           tiles[2][0] = true;
           return;
         }
       }
       if (mouseY < 476 && mouseY > 378 && tiles[3][0] == false) {// [3][0]
         //rect(0,0,100,100);
-        if (mode == 1) {
-          createPlant(50, 390, 0, 100, 1);
-          tiles[3][0] = true;
-          return;
-        }
-        if (mode == 2) {
-          createPlant(50, 390, 0, 100, 2);
+        if (mode != 0) {
+          createPlant(50, 390, 0, 100, mode);
           tiles[3][0] = true;
           return;
         }
       }
       if (mouseY < 578 && mouseY > 476 && tiles[4][0] == false) {// [4][0]
         //rect(0,0,100,100);
-        if (mode == 1) {
-          createPlant(50, 490, 0, 100, 1);
-          tiles[4][0] = true;
-          return;
-        }
-        if (mode == 2) {
-          createPlant(50, 490, 0, 100, 2);
+        if (mode != 0) {
+          createPlant(50, 490, 0, 100, mode);
           tiles[4][0] = true;
           return;
         }
@@ -201,63 +176,38 @@ void mouseClicked() {
     }
     if (mouseX > 140 && mouseX < 240) { // is the mouse cursor in colulm 2 
       if (mouseY > 80 && mouseY < 175 && tiles[0][1] == false) { // [0][1]
-        if (mode == 1) {
-          createPlant(150, 90, 0, 100, 1);
-          tiles[0][1] = true;
-          return;
-        }
-        if (mode == 2) {
-          createPlant(150, 90, 0, 100, 2);
+        if (mode != 0) {
+          createPlant(150, 90, 0, 100, mode);
           tiles[0][1] = true;
           return;
         }
       }
       if (mouseY > 175 && mouseY < 278 && tiles[1][1] == false) { // [1][1]
-        if (mode == 1) {
-          createPlant(150, 190, 0, 100, 1);
-          tiles[1][1] = true;
-          return;
-        }
-        if (mode == 2) {
-          createPlant(150, 190, 0, 100, 2);
+        if (mode != 0) {
+          createPlant(150, 190, 0, 100, mode);
           tiles[1][1] = true;
           return;
         }
       }
       if (mouseY > 287 && mouseY < 387 && tiles[2][1] == false) { // [2][1]
-        if (mode == 1) {
-          createPlant(150, 290, 0, 100, 1);
-          tiles[2][1] = true;
-          return;
-        }
-        if (mode == 2) {
-          createPlant(150, 290, 0, 100, 2);
+        if (mode != 0) {
+          createPlant(150, 290, 0, 100, mode);
           tiles[2][1] = true;
           return;
         }
       }
       if (mouseY < 476 && mouseY > 378 && tiles[3][1] == false) {// [3][1]
         //rect(0,0,00,100);
-        if (mode == 1) {
-          createPlant(150, 390, 0, 100, 1);
-          tiles[3][1] = true;
-          return;
-        }
-        if (mode == 2) {
-          createPlant(150, 390, 0, 100, 2);
+        if (mode != 0) {
+          createPlant(150, 390, 0, 100, mode);
           tiles[3][1] = true;
           return;
         }
       }
       if (mouseY < 578 && mouseY > 476 && tiles[4][1] == false) {// [4][1]
         //rect(0,0,100,100);
-        if (mode == 1) {
-          createPlant(150, 490, 0, 100, 1);
-          tiles[4][1] = true;
-          return;
-        }
-        if (mode == 2) {
-          createPlant(150, 490, 0, 100, 2);
+        if (mode != 0) {
+          createPlant(150, 490, 0, 100, mode);
           tiles[4][1] = true;
           return;
         }
@@ -265,63 +215,38 @@ void mouseClicked() {
     }
     if (mouseX > 240 && mouseX < 350) { // is the mouse cursor in colulm 3 
       if (mouseY > 80 && mouseY < 175 && tiles[0][2] == false) { // [0][2]
-        if (mode == 1) {
-          createPlant(250, 90, 0, 100, 1);
-          tiles[0][2] = true;
-          return;
-        }
-        if (mode == 2) {
-          createPlant(250, 90, 0, 100, 2);
+        if (mode != 0) {
+          createPlant(250, 90, 0, 100, mode);
           tiles[0][2] = true;
           return;
         }
       }
       if (mouseY > 175 && mouseY < 278 && tiles[1][2] == false) { // [1][2]
-        if (mode == 1) {
-          createPlant(250, 190, 0, 100, 1);
-          tiles[1][2] = true;
-          return;
-        }
-        if (mode == 2) {
-          createPlant(250, 190, 0, 100, 2);
+        if (mode != 0) {
+          createPlant(250, 190, 0, 100, mode);
           tiles[1][2] = true;
           return;
         }
       }
       if (mouseY > 287 && mouseY < 387 && tiles[2][2] == false) { // [2][2]
-        if (mode == 1) {
-          createPlant(250, 290, 0, 100, 1);
-          tiles[2][2] = true;
-          return;
-        }
-        if (mode == 2) {
-          createPlant(250, 290, 0, 100, 2);
+        if (mode != 0) {
+          createPlant(250, 290, 0, 100, mode);
           tiles[2][2] = true;
           return;
         }
       }
       if (mouseY < 476 && mouseY > 378 && tiles[3][1] == false) {// [3][2]
         //rect(0,0,00,100);
-        if (mode == 1) {
-          createPlant(250, 390, 0, 100, 1);
-          tiles[3][2] = true;
-          return;
-        }
-        if (mode == 2) {
-          createPlant(250, 390, 0, 100, 2);
+        if (mode != 0) {
+          createPlant(250, 390, 0, 100, mode);
           tiles[3][2] = true;
           return;
         }
       }
       if (mouseY < 578 && mouseY > 476 && tiles[4][2] == false) {// [4][2]
         //rect(0,0,100,100);
-        if (mode == 1) {
-          createPlant(250, 490, 0, 100, 1);
-          tiles[4][2] = true;
-          return;
-        }
-        if (mode == 2) {
-          createPlant(250, 490, 0, 100, 2);
+        if (mode != 0) {
+          createPlant(250, 490, 0, 100, mode);
           tiles[4][2] = true;
           return;
         }
@@ -329,63 +254,38 @@ void mouseClicked() {
     }
     if (mouseX > 350 && mouseX < 450) { // is the mouse cursor in colulm 4 
       if (mouseY > 80 && mouseY < 175 && tiles[0][3] == false) { // [0][3]
-        if (mode == 1) {
-          createPlant(370, 90, 0, 100, 1);
-          tiles[0][3] = true;
-          return;
-        }
-        if (mode == 2) {
-          createPlant(370, 90, 0, 100, 2);
+        if (mode != 0) {
+          createPlant(370, 90, 0, 100, mode);
           tiles[0][3] = true;
           return;
         }
       }
       if (mouseY > 175 && mouseY < 278 && tiles[1][3] == false) { // [1][3]
-        if (mode == 1) {
-          createPlant(370, 190, 0, 100, 1);
-          tiles[1][3] = true;
-          return;
-        }
-        if (mode == 2) {
-          createPlant(370, 190, 0, 100, 2);
+        if (mode != 0) {
+          createPlant(370, 190, 0, 100, mode);
           tiles[1][3] = true;
           return;
         }
       }
       if (mouseY > 287 && mouseY < 387 && tiles[2][3] == false) { // [2][3]
-        if (mode == 1) {
-          createPlant(370, 290, 0, 100, 1);
-          tiles[2][3] = true;
-          return;
-        }
-        if (mode == 2) {
-          createPlant(370, 290, 0, 100, 2);
+        if (mode != 0) {
+          createPlant(370, 290, 0, 100, mode);
           tiles[2][3] = true;
           return;
         }
       }
       if (mouseY < 476 && mouseY > 378 && tiles[3][3] == false) {// [3][3]
         //rect(0,0,00,100);
-        if (mode == 1) {
-          createPlant(370, 390, 0, 100, 1);
-          tiles[3][3] = true;
-          return;
-        }
-        if (mode == 2) {
-          createPlant(370, 390, 0, 100, 2);
+        if (mode != 0) {
+          createPlant(370, 390, 0, 100, mode);
           tiles[3][3] = true;
           return;
         }
       }
       if (mouseY < 578 && mouseY > 476 && tiles[4][3] == false) {// [4][3]
         //rect(0,0,100,100);
-        if (mode == 1) {
-          createPlant(370, 490, 0, 100, 1);
-          tiles[4][3] = true;
-          return;
-        }
-        if (mode == 2) {
-          createPlant(370, 490, 0, 100, 2);
+        if (mode != 0) {
+          createPlant(370, 490, 0, 100, mode);
           tiles[4][3] = true;
           return;
         }

@@ -64,6 +64,11 @@ void draw() {
   rect(0, 0, 555, 80);
   image(SunSeed, 140, 0);
   image(PeaShooterSeed, 240, 0);
+  for (int i = 0; i < plant.size(); i++){
+    if (plant.get(i).health <= 0){
+      plant.remove(i);
+    }
+  }
   for (Plants p : plant) {
     p.display();
     double second = (double) millis();
@@ -98,7 +103,7 @@ void draw() {
     } else {
       zombie.get(i).display();
       if (!zombie.get(i).onTopOfPlant()) zombie.get(i).move();
-      zombie.get(i).dealDamage();
+      if (frameCount % 30 == 0) zombie.get(i).dealDamage();
       zombie.get(i).takeDamage();
     }
   }

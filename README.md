@@ -15,7 +15,7 @@ Sunlight can be collected, working on wave spawning for zombie, zombies can now 
 Peashooter available for selection, fixed zombie spawning to be random, zombies now stop and deal damage to plants, plants can die  
 
 5/24/19  
-Plant placement for entire map works, bullets are deleted when leaving the screen, plants "die" but there was a bug where you cannot place a plant over a tile in which a "dead" plant was already placed, bug fixed. Adding wallnut  
+Plant placement for entire map works, bullets are deleted when leaving the screen, plants "die" but there was a bug where you cannot place a plant over a tile in which a "dead" plant was already placed, bug fixed. Adding wallnut, plants now cost money, player starts with 200 currency  
 
 
 

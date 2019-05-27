@@ -1,8 +1,9 @@
 class Zombies{
-  int x,y,health,damage,speed;
+  int health,damage;
   PImage pic;
+  float x, y, speed;
   
-  Zombies(int x, int y, int health, int damage, int speed) {
+  Zombies(float x, float y, int health, int damage, float speed) {
    this.x = x;
    this.y = y;
    this.health = health;

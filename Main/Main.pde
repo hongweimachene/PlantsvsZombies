@@ -108,12 +108,12 @@ void draw() {
   spawn4();
   spawn5();
   for (int i = 0; i < zombie.size(); i++) {
-    if (zombie.get(i).health <= 0) {
+    if (zombie.get(i).health <= 0 || zombie.get(i).x < 0) {
       zombie.remove(i);
     } else {
       zombie.get(i).display();
       if (!zombie.get(i).onTopOfPlant()) zombie.get(i).move();
-      if (frameCount % 30 == 0) zombie.get(i).dealDamage();
+      if (frameCount % 50 == 0) zombie.get(i).dealDamage();
       zombie.get(i).takeDamage();
     }
   }
@@ -538,35 +538,35 @@ void createPlant(int x, int y, int damage, int health, int type, int fakeX, int 
  void spawn1(){
    int s = millis();
    if (s % (int)random(800,2001) == 0){
-     Zombies z = new Zombies(950, 50, 50, 10, 1);
+     Zombies z = new Zombies(950, 50, 50, 10,  random(.5,2.1));
      zombie.add(z);
    }
  }
  void spawn2(){
    int s = millis();
    if (s % (int)random(1000, 2001) == 0){
-     Zombies z = new Zombies(950, 155, 50, 10, 1);
+     Zombies z = new Zombies(950, 155, 50, 10,  random(.5,2.1));
      zombie.add(z);
    }
  }
  void spawn3(){
    int s = millis();
    if (s % (int)random(1000,2001) == 0){
-     Zombies z = new Zombies(950, 255, 50, 10, 1);
+     Zombies z = new Zombies(950, 255, 50, 10, random(.5,2.1));
      zombie.add(z);
    }
  }
  void spawn4(){
    int s = millis();
    if (s % (int)random(1000,2001) == 0){
-     Zombies z = new Zombies(950, 353, 50, 10, 1);
+     Zombies z = new Zombies(950, 353, 50, 10,  random(.5,2.1));
      zombie.add(z);
    }
  }
  void spawn5(){
    int s = millis();
    if (s % (int)random(1000,2001) == 0){
-     Zombies z = new Zombies(950, 455, 50, 10, 1);
+     Zombies z = new Zombies(950, 455, 50, 10,  random(.5,2.1));
      zombie.add(z);
    }
  }

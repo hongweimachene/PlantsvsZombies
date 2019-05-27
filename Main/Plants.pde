@@ -1,7 +1,7 @@
 abstract class Plants {
-  int x, y, damage, health,fakeX,fakeY;
+  int x, y, damage, health, fakeX, fakeY;
   PImage pic;
-  Plants(int x, int y, int damage, int health,int fakeX, int fakeY) {
+  Plants(int x, int y, int damage, int health, int fakeX, int fakeY) {
     this.x=x;
     this.y=y;
     this.damage=damage;
@@ -21,7 +21,7 @@ class peaShooter extends Plants {
   PImage green;
   int time; 
   peaShooter(int x, int y, int damage, int health, int fakeX, int fakeY) {
-    super(x, y, damage, health,fakeX,fakeY);
+    super(x, y, damage, health, fakeX, fakeY);
     green = loadImage("peaShooter.png");
     green.resize(80, 80);
     time = (int)random(80);
@@ -33,24 +33,24 @@ class peaShooter extends Plants {
     image(green, x, y);
     //rect(x,y,10,10);
   }
-  void giveSun() {
-  }
-  void attack(){
-    if (time == 100){
-   greenPea b = new greenPea(x + 60,y + 20,10);
-   ammo.add(b);
-   time = 0;
-    }
-    else{
+  void attack() {
+    if (time == 100) {
+      greenPea b = new greenPea(x + 60, y + 20, 10);
+      ammo.add(b);
+      time = 0;
+    } else {
       time +=1;
     }
+  }
+  void giveSun(){
+    
   }
 }
 class sunFlower extends Plants {
   PImage sun;
   PImage sunlight;
-  sunFlower(int x, int y, int damage, int health,int fakeX, int fakeY) {
-    super(x, y, damage, health,fakeX,fakeY);
+  sunFlower(int x, int y, int damage, int health, int fakeX, int fakeY) {
+    super(x, y, damage, health, fakeX, fakeY);
     sun = loadImage("sunflower.png");
     sun.resize(80, 80);
   }
@@ -64,6 +64,21 @@ class sunFlower extends Plants {
     Sunlight s = new Sunlight(x + 40 + (int)random(30), y - (int)random(50) - 10);
     light.add(s);
   }
-  void attack(){
+  void attack() {
+    
   }
+}
+class wallNut extends Plants {
+   wallNut(int x, int y, int damage, int health, int fakeX, int fakeY) {
+     super(x, y, damage, health, fakeX, fakeY);
+   }
+   void display() {
+     image(nutSeed,x,y);
+   }
+   void attack() {
+     
+   }
+   void giveSun(){ 
+   
+   }
 }

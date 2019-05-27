@@ -14,8 +14,8 @@ int mode; // 0  = not holding seed // 1 = holding sunFlower
 void setup() {
   tiles = new boolean[5][9];
   mode = 0;
-  nutSeed = loadImage("wallNut Seed.png");
-  nutSeed.resize(100,70);
+  //nutSeed = loadImage("wallNut Seed.png");
+  //nutSeed.resize(100,70);
   shine = loadImage("sunlight.png");
   shine.resize(70, 70);
   PeaShooterSeed = loadImage("peaShooterSeed.png");
@@ -67,7 +67,7 @@ void draw() {
   rect(0, 0, 555, 80);
   image(SunSeed, 140, 0);
   image(PeaShooterSeed, 240, 0);
-  image(nutSeed,340,0);
+  //image(nutSeed,340,0);
   for (int i = 0; i < plant.size(); i++){
     if (plant.get(i).health <= 0){
       tiles[plant.get(i).fakeX][plant.get(i).fakeY] = false;
@@ -157,6 +157,7 @@ void mouseClicked() {
   }
 
   if (mouseY > 80 && mouseY < 578 && mouseX > 30 && mouseX < 975) { //is the mouse cursor on the map
+    if (sunMoney >= 50) {
     if (mouseX < 140) { // is the mouse cursor in colulm 1 
       if (mouseY > 80 && mouseY < 175 && tiles[0][0] == false) { // [0][0]
         if (mode != 0) {
@@ -509,29 +510,30 @@ void mouseClicked() {
       }
     }
   }
+  }
 }
 void createPlant(int x, int y, int damage, int health, int type, int fakeX, int fakeY) { // 1: sunflower 2: peashooter
-  if (type == 1 ){//&& sunMoney >= 50) {
-    //sunMoney -= 50;
+  if (type == 1 && sunMoney >= 50) {
+    sunMoney -= 50;
     sunFlower b = new sunFlower (x, y, damage, health,fakeX,fakeY);
     plant.add(b);
     mode = 0;
     return;
   }
-  if (type == 2 ){//&& sunMoney >= 100) {
-    //sunMoney -= 100;
+  if (type == 2 && sunMoney >= 100) {
+    sunMoney -= 100;
     peaShooter b = new peaShooter (x, y, damage, health,fakeX, fakeY);
     plant.add(b);
     mode = 0;
     return;
   }
-  if (type == 3){ //&& sunMoney >= 50) {
-    //sunMoney -= 50;
-    wallNut b = new wallNut (x, y, damage, 1000,fakeX, fakeY);
-    plant.add(b);
-    mode = 0;
-    return;
-  }
+  //if (type == 3){ //&& sunMoney >= 50) {
+  //  sunMoney -= 50;
+  //  wallNut b = new wallNut (x, y, damage, 1000,fakeX, fakeY);
+  //  plant.add(b);
+  //  mode = 0;
+  //  return;
+  //}
 }
  void spawn1(){
    int s = millis();

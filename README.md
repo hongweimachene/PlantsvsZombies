@@ -18,7 +18,7 @@ Peashooter available for selection, fixed zombie spawning to be random, zombies 
 Plant placement for entire map works, bullets are deleted when leaving the screen, plants "die" but there was a bug where you cannot place a plant over a tile in which a "dead" plant was already placed, bug fixed. Adding wallnut, plants now cost money, player starts with 200 currency  
 
 5/26/19   
-Added wallnut class, sunflowers no longer spawn suns in synch, all spawn randomly 
+Added wallnut class, sunflowers no longer spawn suns in synch, all spawn randomly, zombies spawn slower, zombies each have random speed 
 
 
 

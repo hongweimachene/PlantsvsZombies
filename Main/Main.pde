@@ -76,10 +76,10 @@ void draw() {
   }
   for (Plants p : plant) {
     p.display();
-    double second = (double) millis();
-    if (second % 5000.0 > 0.0 && second % 5000 < 15.0) {
+    //double second = (double) millis();
+    //if (second % 5000.0 > 0.0 && second % 5000 < 15.0) {
       p.giveSun();
-    }
+    //}
     p.attack();
   }
   for (int index = 0; index < light.size(); index ++) {

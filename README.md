@@ -20,7 +20,8 @@ Plant placement for entire map works, bullets are deleted when leaving the scree
 5/26/19   
 Added wallnut class, sunflowers no longer spawn suns in synch, all spawn randomly, zombies spawn slower, zombies each have random speed 
 
-
+5/27/19  
+Now displays amount of zombies killed and wave number, added lawnmower class, added some lawnmower methods  
 
 
 

@@ -62,11 +62,12 @@ class sunFlower extends Plants {
     image(sun, x, y);
   }
   void giveSun() {
-    if (time >= 350) {
+    if (time == 100) {
       Sunlight s = new Sunlight(x + 40 + (int)random(30), y - (int)random(50) - 10);
       light.add(s);
       time = 0;
     }
+    time ++;
   }
   void attack() {
   }

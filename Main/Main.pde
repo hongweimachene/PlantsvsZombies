@@ -14,7 +14,7 @@ int mode; // 0  = not holding seed // 1 = holding sunFlower
 void setup() {
   tiles = new boolean[5][9];
   mode = 0;
-  nutSeed = loadImage("wallNut Seed.png");
+  nutSeed = loadImage("wallNutSeed.png");
   nutSeed.resize(100,70);
   shine = loadImage("sunlight.png");
   shine.resize(70, 70);

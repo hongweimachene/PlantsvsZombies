@@ -9,12 +9,14 @@ ArrayList<Bullet> ammo;
 ArrayList<Sunlight> light;
 ArrayList<Zombies> zombie;
 boolean[][] tiles;
+boolean divis;
 int zombiesKilled;
 int wave;
 int sunMoney;
 int mode; // 0  = not holding seed // 1 = holding sunFlower
 void setup() {
   tiles = new boolean[5][9];
+  divis = false; 
   mode = 0;
   zombiesKilled = 0; 
   wave = 0;
@@ -71,6 +73,9 @@ void draw() {
   rect(0, 0, 555, 80);
   image(SunSeed, 140, 0);
   image(PeaShooterSeed, 240, 0);
+  //if (zombiesKilled > 0 && zombiesKilled % 20 == 0){
+  //  wave++;
+  //}
   //image(nutSeed,340,0);
   for (int i = 0; i < plant.size(); i++){
     if (plant.get(i).health <= 0){
@@ -112,8 +117,12 @@ void draw() {
   spawn4();
   spawn5();
   for (int i = 0; i < zombie.size(); i++) {
-    if (zombie.get(i).health <= 0 || zombie.get(i).x < 0) {
+    if (zombie.get(i).x < 0){
       zombie.remove(i);
+    }
+    if (zombie.get(i).health <= 0) {
+      zombie.remove(i);
+      zombiesKilled++;
     } else {
       zombie.get(i).display();
       if (!zombie.get(i).onTopOfPlant()) zombie.get(i).move();

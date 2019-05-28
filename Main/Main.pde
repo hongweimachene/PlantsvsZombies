@@ -531,22 +531,22 @@ void mouseClicked() {
   }
 }
 void createPlant(int x, int y, int damage, int health, int type, int fakeX, int fakeY) { // 1: sunflower 2: peashooter
-  if (type == 1 && sunMoney >= 50) {
-    sunMoney -= 50;
+  if (type == 1){ //&& sunMoney >= 50) {
+    //sunMoney -= 50;
     sunFlower b = new sunFlower (x, y, damage, health,fakeX,fakeY);
     plant.add(b);
     mode = 0;
     return;
   }
-  if (type == 2 && sunMoney >= 100) {
-    sunMoney -= 100;
+  if (type == 2){ //&& sunMoney >= 100) {
+    //sunMoney -= 100;
     peaShooter b = new peaShooter (x, y, damage, health,fakeX, fakeY);
     plant.add(b);
     mode = 0;
     return;
   }
   if (type == 3){ //&& sunMoney >= 50) {
-    sunMoney -= 50;
+    //sunMoney -= 50;
     wallNut b = new wallNut (x, y, damage, 1000,fakeX, fakeY);
     plant.add(b);
     mode = 0;

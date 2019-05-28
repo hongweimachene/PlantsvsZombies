@@ -87,6 +87,18 @@ void draw() {
       plant.remove(i);
     }
   }
+  for (int i = 0; i < lawnmow.size(); i++){
+    if (lawnmow.get(i).x > 1000){
+      lawnmow.remove(i);
+    } else {
+      lawnmow.get(i).display();
+    }
+    if (lawnmow.get(i).touch == false) {
+      lawnmow.get(i).trigger();
+    } else {
+      lawnmow.get(i).runOver();
+    }
+  }
   for (Plants p : plant) {
     p.display();
     //double second = (double) millis();

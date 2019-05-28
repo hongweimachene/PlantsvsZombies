@@ -142,6 +142,7 @@ void draw() {
     fill(255);
     rect(335, 0, 100, 70);
   }
+  fill(214, 234, 248);
   rect(700,0,300,50);
   fill(0);
   textSize(20); 

@@ -53,7 +53,7 @@ class sunFlower extends Plants {
     super(x, y, damage, health, fakeX, fakeY);
     sun = loadImage("sunflower.png");
     sun.resize(80, 80);
-    time = (int)random(400);
+    time = 0;
   }
   void display() {
     textSize(20);
@@ -62,7 +62,7 @@ class sunFlower extends Plants {
     image(sun, x, y);
   }
   void giveSun() {
-    if (time == 100) {
+    if (time == 500) {
       Sunlight s = new Sunlight(x + 40 + (int)random(30), y - (int)random(50) - 10);
       light.add(s);
       time = 0;

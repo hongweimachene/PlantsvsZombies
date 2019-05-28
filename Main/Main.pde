@@ -5,10 +5,12 @@ PImage nutSeed;
 PImage PeaShooterSeed;
 PImage picZomb;
 PImage shovel;
+PImage mower;
 ArrayList<Plants> plant;
 ArrayList<Bullet> ammo;
 ArrayList<Sunlight> light;
 ArrayList<Zombies> zombie;
+ArrayList<Lawnmower> lawnmow; 
 boolean[][] tiles;
 boolean divis;
 int zombiesKilled;
@@ -38,12 +40,15 @@ void setup() {
   ammo = new ArrayList<Bullet>();
   light = new ArrayList<Sunlight>();
   zombie = new ArrayList<Zombies>();
+  lawnmow = new ArrayList<Lawnmower>(); 
   size(1000, 600);
   background(255);
   picZomb = loadImage("zombie.png");
   picZomb.resize(80, 120);
   image = loadImage("back.png");
   image.resize(1380, 600);
+  mower = loadImage("lawnmower.png");
+  mower.resize(120,120); 
   image(image, -180, 0);
   fill(155, 89, 182);
   line(0, 80, 1380, 80); // y = 80
@@ -63,6 +68,7 @@ void setup() {
   line(760, 0, 760, 600); // x = 760
   line(865, 0, 865, 600); // x = 865
   line(975, 0, 975, 600); // x = 975
+  spawnMower();
   //peaShooter t = new peaShooter(50, 90, 50, 100);
   //peaShooter p = new peaShooter(50, 290, 50, 100);
   //sunFlower s = new sunFlower(50, 190, 0, 100);
@@ -88,6 +94,18 @@ void draw() {
     if (plant.get(i).health <= 0) {
       tiles[plant.get(i).fakeX][plant.get(i).fakeY] = false;
       plant.remove(i);
+    }
+  }
+  for (int i = 0; i < lawnmow.size(); i++){
+    if (lawnmow.get(i).x > 1000){
+      lawnmow.remove(i);
+    } else {
+      lawnmow.get(i).display();
+    }
+    if (lawnmow.get(i).touch == false) {
+      lawnmow.get(i).trigger();
+    } else {
+      lawnmow.get(i).runOver();
     }
   }
   for (Plants p : plant) {
@@ -570,7 +588,7 @@ boolean createPlant(int x, int y, int damage, int health, int type, int fakeX, i
     mode = 0;
     return true;
   }
-  if (type == 3  ) // && sunMoney >= 50) {
+  if (type == 3  ){ // && sunMoney >= 50) {
   //sunMoney -= 50;
   wallNut b = new wallNut (x, y, damage, 1000, fakeX, fakeY);
   plant.add(b);
@@ -623,3 +641,9 @@ void spawn5() {
     zombie.add(z);
   }
 }
+ void spawnMower(){
+   for (int i = 0; i < 5; i++){
+     Lawnmower f = new Lawnmower(-30, i*100+50, 3);
+     lawnmow.add(f);
+   }
+ }

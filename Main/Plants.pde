@@ -33,8 +33,6 @@ class peaShooter extends Plants {
     image(green, x, y);
     //rect(x,y,10,10);
   }
-  void giveSun() {
-  }
   void attack() {
     if (time == 100) {
       greenPea b = new greenPea(x + 60, y + 20, 10);
@@ -44,6 +42,8 @@ class peaShooter extends Plants {
       time +=1;
     }
   }
+  void giveSun() {
+  }
 }
 class sunFlower extends Plants {
   PImage sun;
@@ -52,6 +52,7 @@ class sunFlower extends Plants {
     super(x, y, damage, health, fakeX, fakeY);
     sun = loadImage("sunflower.png");
     sun.resize(80, 80);
+    //time = (int) random(400);
   }
   void display() {
     textSize(20);
@@ -60,8 +61,10 @@ class sunFlower extends Plants {
     image(sun, x, y);
   }
   void giveSun() {
+    //if (time >= 350){
     Sunlight s = new Sunlight(x + 40 + (int)random(30), y - (int)random(50) - 10);
     light.add(s);
+    //time = 0;
   }
   void attack() {
   }

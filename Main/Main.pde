@@ -4,10 +4,12 @@ PImage SunSeed;
 PImage nutSeed;
 PImage PeaShooterSeed;
 PImage picZomb;
+PImage mower;
 ArrayList<Plants> plant;
 ArrayList<Bullet> ammo;
 ArrayList<Sunlight> light;
 ArrayList<Zombies> zombie;
+ArrayList<Lawnmower> lawnmow; 
 boolean[][] tiles;
 boolean divis;
 int zombiesKilled;
@@ -33,12 +35,14 @@ void setup() {
   ammo = new ArrayList<Bullet>();
   light = new ArrayList<Sunlight>();
   zombie = new ArrayList<Zombies>();
+  lawnnow = new ArrayList<Lawnmower>(); 
   size(1000, 600);
   background(255);
   picZomb = loadImage("zombie.png");
   picZomb.resize(80,120);
   image = loadImage("back.png");
   image.resize(1380, 600);
+  mower = loadImage("lawnmower.png");
   image(image, -180, 0);
   fill(155, 89, 182);
   line(0, 80, 1380, 80); // y = 80

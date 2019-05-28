@@ -9,11 +9,15 @@ ArrayList<Bullet> ammo;
 ArrayList<Sunlight> light;
 ArrayList<Zombies> zombie;
 boolean[][] tiles;
+int zombiesKilled;
+int wave;
 int sunMoney;
 int mode; // 0  = not holding seed // 1 = holding sunFlower
 void setup() {
   tiles = new boolean[5][9];
   mode = 0;
+  zombiesKilled = 0; 
+  wave = 0;
   //nutSeed = loadImage("wallNut Seed.png");
   //nutSeed.resize(100,70);
   shine = loadImage("sunlight.png");
@@ -129,6 +133,11 @@ void draw() {
     fill(255);
     rect(335, 0, 100, 70);
   }
+  rect(700,0,300,50);
+  fill(0);
+  textSize(20); 
+  text("Zombies Killed: " + zombiesKilled,710, 20);
+  text("Wave: " + wave, 710, 45); 
 }
 void mouseClicked() {
   if (dist(mouseX, mouseY, 195, 30) < 40 && mode == 0) {

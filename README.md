@@ -23,6 +23,12 @@ Added wallnut class, sunflowers no longer spawn suns in synch, all spawn randoml
 5/27/19  
 Now displays amount of zombies killed and wave number, added lawnmower class, added some lawnmower methods  
 
+5/28/19   
+Fixed bug where zombie had array out of bounds error when removed, fixed bug where mouseClick plants an object but doesnt display it when its not supposed to, added more lawnmower functions like trigger and move, added draw and display for lawnmower, added spawning lawnmower function  
+
+5/29/19  
+Lawnmowers now run over zombies, fixed bug where there is array out of bounds when lawnmower is removed, fixed coordinate check for where to kill zombies when they go off the screen and adjusted distance check for when lawnmower is triggered, started on removing plants button and functions  
+
 
 
 

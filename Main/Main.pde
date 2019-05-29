@@ -99,13 +99,14 @@ void draw() {
   for (int i = 0; i < lawnmow.size(); i++){
     if (lawnmow.get(i).x > 1000){
       lawnmow.remove(i);
+      i--;
     } else {
       lawnmow.get(i).display();
-    }
-    if (lawnmow.get(i).touch == false) {
-      lawnmow.get(i).trigger();
-    } else {
-      lawnmow.get(i).runOver();
+      if (lawnmow.get(i).touch == false) {
+        lawnmow.get(i).trigger();
+      } else {
+        lawnmow.get(i).runOver();
+      }
     }
   }
   for (Plants p : plant) {
@@ -142,7 +143,7 @@ void draw() {
   spawn4();
   spawn5();
   for (int i = 0; i < zombie.size(); i++) {
-    if (zombie.get(i).x < 0) {
+    if (zombie.get(i).x + 45 < 0) {
       zombie.remove(i);
       i --;
     } else if (zombie.get(i).health <= 0) {
@@ -658,7 +659,7 @@ void spawn5() {
 }
  void spawnMower(){
    for (int i = 0; i < 5; i++){
-     Lawnmower f = new Lawnmower(-30, i*100+50, 3);
+     Lawnmower f = new Lawnmower(-30, i*100+50, 6);
      lawnmow.add(f);
    }
  }

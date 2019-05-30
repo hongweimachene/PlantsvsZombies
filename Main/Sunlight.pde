@@ -1,8 +1,10 @@
 class Sunlight {
   int x, y,time;
-  Sunlight(int x, int y) {
+  boolean sky;
+  Sunlight(int x, int y,boolean sky) {
     this.x = x;
     this.y = y;
+    this.sky = sky;
     time = (int)random(20);
   }
   void display() {

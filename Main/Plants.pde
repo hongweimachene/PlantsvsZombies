@@ -63,7 +63,7 @@ class sunFlower extends Plants {
   }
   void giveSun() {
     if (time == 500) {
-      Sunlight s = new Sunlight(x + 40 + (int)random(30), y - (int)random(50) - 10);
+      Sunlight s = new Sunlight(x + 40 + (int)random(30), y - (int)random(50) - 10, false);
       light.add(s);
       time = 0;
     }

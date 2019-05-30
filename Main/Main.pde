@@ -15,14 +15,16 @@ boolean[][] tiles;
 boolean divis;
 int zombiesKilled;
 int wave;
-int sunMoney;
-int sunTime;
+int sunMoney; // currency 
+int sunTime; // time between sunflower light 
+int sunFall; // time for sunlight from the sky 
 int mode; // -1 = shovel / 0  = not holding seed / 1 = holding sunFlower / 2 = holding peaShooter / 3 = holding walnut 
 void setup() {
   tiles = new boolean[5][9];
   divis = false; 
   mode = 0;
   sunTime = 0;
+  sunFall = 50;
   shovel = loadImage("dig.png");
   shovel.resize(70, 70);
   nutSeed = loadImage("wallNutSeed.png");
@@ -80,6 +82,12 @@ void setup() {
 
 void draw() {
   sunTime += 1;
+  sunFall += 1;
+  if (sunFall == 100){
+    Sunlight s = new Sunlight(300,0,true);
+    light.add(s);
+    sunFall = 0;
+  }
   image(image, -180, 0);
   fill(135, 54, 0);
   rect(0, 0, 555, 80);
@@ -118,11 +126,20 @@ void draw() {
     p.attack();
   }
   for (int index = 0; index < light.size(); index ++) {
-    light.get(index).display();
-    if (light.get(index).isMouseNear(mouseX, mouseY)) {
+    if (light.get(index).sky){
+      light.get(index).y += 50;
+    }
+    if (light.get(index).y > 600){
+      light.remove(index);
+      index --;
+    }
+    else if (light.get(index).isMouseNear(mouseX, mouseY)) {
       light.remove(index);
       sunMoney += 50;
       index --;
+    }
+    else {
+      light.get(index).display();
     }
   }
   for (int i = 0; i < ammo.size(); i++) {

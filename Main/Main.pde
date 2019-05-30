@@ -7,6 +7,7 @@ PImage picZomb;
 PImage shovel;
 PImage mower;
 PImage end;
+PImage buckethead;
 ArrayList<Plants> plant;
 ArrayList<Bullet> ammo;
 ArrayList<Sunlight> light;
@@ -33,6 +34,8 @@ void setup() {
   shovel.resize(70, 70);
   nutSeed = loadImage("wallNutSeed.png");
   nutSeed.resize(100, 70);
+  buckethead = loadImage("bucket.png");
+  buckethead.resize(80,12);
   zombiesKilled = 0; 
   wave = 0;
   shine = loadImage("sunlight.png");

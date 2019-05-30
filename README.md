@@ -29,7 +29,10 @@ Fixed bug where zombie had array out of bounds error when removed, fixed bug whe
 5/29/19  
 Lawnmowers now run over zombies, fixed bug where there is array out of bounds when lawnmower is removed, fixed coordinate check for where to kill zombies when they go off the screen and adjusted distance check for when lawnmower is triggered, started on removing plants button and functions  
 
-
+5/30/19    
+Together: implemented working end/gameover screen, sunlight now falls randomly on map   
+Jack: fixed bug where player cant collect falling sunlight  
+Hong Wei: started to add buckethead zombie, added image    
 
 
 

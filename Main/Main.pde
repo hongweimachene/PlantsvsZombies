@@ -472,7 +472,7 @@ void mouseClicked() {
           }
         }
       }
-      if (mouseY < 476 && mouseY > 378 && tiles[3][3] == false) {// [3][3]
+      if (mouseY < 476 && mouseY > 378) {// [3][3]
         if (mode == -1) {
           digUp(370, 390);
           mode = 0;

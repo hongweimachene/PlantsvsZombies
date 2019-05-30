@@ -83,8 +83,8 @@ void setup() {
 void draw() {
   sunTime += 1;
   sunFall += 1;
-  if (sunFall == 100){
-    Sunlight s = new Sunlight(300,0,true);
+  if (sunFall == 500){
+    Sunlight s = new Sunlight((int)random(900),0,true);
     light.add(s);
     sunFall = 0;
   }
@@ -126,20 +126,19 @@ void draw() {
     p.attack();
   }
   for (int index = 0; index < light.size(); index ++) {
+    light.get(index).display();
     if (light.get(index).sky){
-      light.get(index).y += 50;
+      light.get(index).y += 1;
     }
-    if (light.get(index).y > 600){
-      light.remove(index);
-      index --;
+    if (light.get(index).y > light.get(index).floor){
+      light.get(index).sky = false;
+      //light.remove(index);
+      //index --;
     }
-    else if (light.get(index).isMouseNear(mouseX, mouseY)) {
+    if (light.get(index).isMouseNear(mouseX, mouseY)) {
       light.remove(index);
       sunMoney += 50;
       index --;
-    }
-    else {
-      light.get(index).display();
     }
   }
   for (int i = 0; i < ammo.size(); i++) {

@@ -409,24 +409,39 @@ void mouseClicked() {
       }
     }
     if (mouseX > 350 && mouseX < 450) { // is the mouse cursor in colulm 4 
-      if (mouseY > 80 && mouseY < 175 && tiles[0][3] == false) { // [0][3]
-        if (mode != 0) {
+      if (mouseY > 80 && mouseY < 175) { // [0][3]
+        if (mode == -1) {
+          digUp(370, 90);
+          mode = 0;
+          return;
+        }
+       else if (mode != 0 && tiles[0][3] == false) {
           if (createPlant(370, 90, 0, 100, mode, 0, 3)) {
             tiles[0][3] = true;
             return;
           }
         }
       }
-      if (mouseY > 175 && mouseY < 278 && tiles[1][3] == false) { // [1][3]
-        if (mode != 0) {
+      if (mouseY > 175 && mouseY < 278) { // [1][3]
+        if (mode == -1) {
+          digUp(370, 190);
+          mode = 0;
+          return;
+        }
+        else if (mode != 0 && tiles[1][3] == false) {
           if (createPlant(370, 190, 0, 100, mode, 1, 3)) {
             tiles[1][3] = true;
             return;
           }
         }
       }
-      if (mouseY > 287 && mouseY < 387 && tiles[2][3] == false) { // [2][3]
-        if (mode != 0) {
+      if (mouseY > 287 && mouseY < 387) { // [2][3]
+        if (mode == -1) {
+          digUp(370, 290);
+          mode = 0;
+          return;
+        }
+        else if (mode != 0 && tiles[2][3] == false) {
           if (createPlant(370, 290, 0, 100, mode, 2, 3)) {
             tiles[2][3] = true;
             return;
@@ -434,17 +449,25 @@ void mouseClicked() {
         }
       }
       if (mouseY < 476 && mouseY > 378 && tiles[3][3] == false) {// [3][3]
-        //rect(0,0,00,100);
-        if (mode != 0) {
+        if (mode == -1) {
+          digUp(370, 390);
+          mode = 0;
+          return;
+        }
+        else if (mode != 0 && tiles[3][3] == false) {
           if (createPlant(370, 390, 0, 100, mode, 3, 3)) {
             tiles[3][3] = true;
             return;
           }
         }
       }
-      if (mouseY < 578 && mouseY > 476 && tiles[4][3] == false) {// [4][3]
-        //rect(0,0,100,100);
-        if (mode != 0) {
+      if (mouseY < 578 && mouseY > 476) {// [4][3]
+        if (mode == -1) {
+          digUp(370, 490);
+          mode = 0;
+          return;
+        }
+        else if (mode != 0 && tiles[4][3] == false) {
           if (createPlant(370, 490, 0, 100, mode, 4, 3)) {
             tiles[4][3] = true;
             return;
@@ -453,42 +476,65 @@ void mouseClicked() {
       }
     }
     if (mouseX > 450 && mouseX < 555) { // is the mouse cursor in colulm 5 
-      if (mouseY > 80 && mouseY < 175 && tiles[0][4] == false) { // [0][4]
-        if (mode != 0) {
+      if (mouseY > 80 && mouseY < 175) { // [0][4]
+        if (mode == -1) {
+          digUp(470, 90);
+          mode = 0;
+          return;
+        }
+        else if (mode != 0 && tiles[0][4] == false) {
           if (createPlant(470, 90, 0, 100, mode, 0, 4)) {
             tiles[0][4] = true;
             return;
           }
         }
       }
-      if (mouseY > 175 && mouseY < 278 && tiles[1][4] == false) { // [1][4]
-        if (mode != 0) {
+      if (mouseY > 175 && mouseY < 278) { // [1][4]
+        if (mode == -1) {
+          digUp(470, 190);
+          mode = 0;
+          return;
+        }
+        else if (mode != 0 && tiles[1][4] == false) {
           if (createPlant(470, 190, 0, 100, mode, 1, 4)) {
             tiles[1][4] = true;
             return;
           }
         }
       }
-      if (mouseY > 287 && mouseY < 387 && tiles[2][4] == false) { // [2][4]
-        if (mode != 0) {
+      if (mouseY > 287 && mouseY < 387) { // [2][4]
+        if (mode == -1) {
+          digUp(470, 290);
+          mode = 0;
+          return;
+        }
+        else if (mode != 0 && tiles[2][4] == false) {
           if (createPlant(470, 290, 0, 100, mode, 2, 4)) {
             tiles[2][4] = true;
             return;
           }
         }
       }
-      if (mouseY < 476 && mouseY > 378 && tiles[3][4] == false) {// [3][4]
-        //rect(0,0,00,100);
-        if (mode != 0) {
+      if (mouseY < 476 && mouseY > 378) {// [3][4]
+       if (mode == -1) {
+          digUp(470, 390);
+          mode = 0;
+          return;
+        }
+        else if (mode != 0 && tiles[3][4] == false) {
           if (createPlant(470, 390, 0, 100, mode, 3, 4)) {
             tiles[3][4] = true;
             return;
           }
         }
       }
-      if (mouseY < 578 && mouseY > 476 && tiles[4][4] == false) {// [4][4]
-        //rect(0,0,100,100);
-        if (mode != 0) {
+      if (mouseY < 578 && mouseY > 476) {// [4][4]
+        if (mode == -1) {
+          digUp(470, 490);
+          mode = 0;
+          return;
+        }       
+        else if (mode != 0 && tiles[4][4] == false) {
           if (createPlant(470, 490, 0, 100, mode, 4, 4)) {
             tiles[4][4] = true;
             return;
@@ -497,42 +543,65 @@ void mouseClicked() {
       }
     }
     if (mouseX > 555 && mouseX < 660) { // is the mouse cursor in colulm 6 
-      if (mouseY > 80 && mouseY < 175 && tiles[0][5] == false) { // [0][5]
-        if (mode != 0) {
+      if (mouseY > 80 && mouseY < 175) { // [0][5]
+        if (mode == -1) {
+          digUp(570, 90);
+          mode = 0;
+          return;
+        }  
+        else if (mode != 0 && tiles[0][5] == false) {
           if (createPlant(570, 90, 0, 100, mode, 0, 5)) {
             tiles[0][5] = true;
             return;
           }
         }
       }
-      if (mouseY > 175 && mouseY < 278 && tiles[1][5] == false) { // [1][5]
-        if (mode != 0) {
+      if (mouseY > 175 && mouseY < 278) { // [1][5]
+        if (mode == -1) {
+          digUp(570, 190);
+          mode = 0;
+          return;
+        }
+        else if (mode != 0 && tiles[1][5] == false) {
           if (createPlant(570, 190, 0, 100, mode, 1, 5)) {
             tiles[1][5] = true;
             return;
           }
         }
       }
-      if (mouseY > 287 && mouseY < 387 && tiles[2][5] == false) { // [2][5]
-        if (mode != 0) {
+      if (mouseY > 287 && mouseY < 387) { // [2][5]
+        if (mode == -1) {
+          digUp(570, 290);
+          mode = 0;
+          return;
+        }
+        else if (mode != 0  && tiles[2][5] == false) {
           if (createPlant(570, 290, 0, 100, mode, 2, 5)) {
             tiles[2][5] = true;
             return;
           }
         }
       }
-      if (mouseY < 476 && mouseY > 378 && tiles[3][5] == false) {// [3][5]
-        //rect(0,0,00,100);
-        if (mode != 0) {
+      if (mouseY < 476 && mouseY > 378) {// [3][5]
+        if (mode == -1) {
+          digUp(570, 390);
+          mode = 0;
+          return;
+        }
+        else if (mode != 0 && tiles[3][5] == false) {
           if (createPlant(570, 390, 0, 100, mode, 3, 5)) {
             tiles[3][5] = true;
             return;
           }
         }
       }
-      if (mouseY < 578 && mouseY > 476 && tiles[4][5] == false) {// [4][5]
-        //rect(0,0,100,100);
-        if (mode != 0) {
+      if (mouseY < 578 && mouseY > 476) {// [4][5]
+        if (mode == -1) {
+          digUp(570, 490);
+          mode = 0;
+          return;
+        }
+        else if (mode != 0 && tiles[4][5] == false) {
           if (createPlant(570, 490, 0, 100, mode, 4, 5)) {
             tiles[4][5] = true;
             return;
@@ -541,42 +610,65 @@ void mouseClicked() {
       }
     }
     if (mouseX > 660 && mouseX < 760) { // is the mouse cursor in colulm 7 
-      if (mouseY > 80 && mouseY < 175 && tiles[0][6] == false) { // [0][6]
-        if (mode != 0) {
+      if (mouseY > 80 && mouseY < 175) { // [0][6]
+        if (mode == -1) {
+          digUp(670, 90);
+          mode = 0;
+          return;
+        }
+        else if (mode != 0 && tiles[0][6] == false) {
           if (createPlant(670, 90, 0, 100, mode, 0, 6)) {
             tiles[0][6] = true;
             return;
           }
         }
       }
-      if (mouseY > 175 && mouseY < 278 && tiles[1][6] == false) { // [1][6]
-        if (mode != 0) {
+      if (mouseY > 175 && mouseY < 278) { // [1][6]
+        if (mode == -1) {
+          digUp(670, 190);
+          mode = 0;
+          return;
+        }
+        else if (mode != 0 && tiles[1][6] == false) {
           if (createPlant(670, 190, 0, 100, mode, 1, 6)) {
             tiles[1][6] = true;
             return;
           }
         }
       }
-      if (mouseY > 287 && mouseY < 387 && tiles[2][6] == false) { // [2][6]
-        if (mode != 0) {
+      if (mouseY > 287 && mouseY < 387) { // [2][6]
+        if (mode == -1) {
+          digUp(670, 290);
+          mode = 0;
+          return;
+        }
+        else if (mode != 0 && tiles[2][6] == false) {
           if (createPlant(670, 290, 0, 100, mode, 2, 6)) {
             tiles[2][6] = true;
             return;
           }
         }
       }
-      if (mouseY < 476 && mouseY > 378 && tiles[3][6] == false) {// [3][6]
-        //rect(0,0,00,100);
-        if (mode != 0) {
+      if (mouseY < 476 && mouseY > 378) {// [3][6]
+        if (mode == -1) {
+          digUp(670, 390);
+          mode = 0;
+          return;
+        }
+        else if (mode != 0 && tiles[3][6] == false) {
           if (createPlant(670, 390, 0, 100, mode, 3, 6)) {
             tiles[3][6] = true;
             return;
           }
         }
       }
-      if (mouseY < 578 && mouseY > 476 && tiles[4][6] == false) {// [4][6]
-        //rect(0,0,100,100);
-        if (mode != 0) {
+      if (mouseY < 578 && mouseY > 476) {// [4][6]
+        if (mode == -1) {
+          digUp(670, 490);
+          mode = 0;
+          return;
+        }
+        if (mode != 0 && tiles[4][6] == false) {
           if (createPlant(670, 490, 0, 100, mode, 4, 6)) {
             tiles[4][6] = true;
             return;
@@ -585,42 +677,65 @@ void mouseClicked() {
       }
     }
     if (mouseX > 760 && mouseX < 865) { // is the mouse cursor in colulm 8 
-      if (mouseY > 80 && mouseY < 175 && tiles[0][7] == false) { // [0][7]
-        if (mode != 0) {
+      if (mouseY > 80 && mouseY < 175) { // [0][7]
+        if (mode == -1) {
+          digUp(770, 90);
+          mode = 0;
+          return;
+        }
+        else if (mode != 0 && tiles[0][7] == false) {
           if (createPlant(770, 90, 0, 100, mode, 0, 7)) {
             tiles[0][7] = true;
             return;
           }
         }
       }
-      if (mouseY > 175 && mouseY < 278 && tiles[1][7] == false) { // [1][7]
-        if (mode != 0) {
+      if (mouseY > 175 && mouseY < 278) { // [1][7]
+        if (mode == -1) {
+          digUp(770, 190);
+          mode = 0;
+          return;
+        }
+        else if (mode != 0  && tiles[1][7] == false) {
           if (createPlant(770, 190, 0, 100, mode, 1, 7)) {
             tiles[1][7] = true;
             return;
           }
         }
       }
-      if (mouseY > 287 && mouseY < 387 && tiles[2][7] == false) { // [2][7]
-        if (mode != 0) {
+      if (mouseY > 287 && mouseY < 387 ) { // [2][7]
+        if (mode == -1) {
+          digUp(770, 290);
+          mode = 0;
+          return;
+        }
+        else if (mode != 0 && tiles[2][7] == false) {
           if (createPlant(770, 290, 0, 100, mode, 2, 7)) {
             tiles[2][7] = true;
             return;
           }
         }
       }
-      if (mouseY < 476 && mouseY > 378 && tiles[3][7] == false) {// [3][7]
-        //rect(0,0,00,100);
-        if (mode != 0) {
+      if (mouseY < 476 && mouseY > 378) {// [3][7]
+        if (mode == -1) {
+          digUp(770, 390);
+          mode = 0;
+          return;
+        }
+        else if (mode != 0 && tiles[3][7] == false) {
           if (createPlant(770, 390, 0, 100, mode, 3, 7)) {
             tiles[3][7] = true;
             return;
           }
         }
       }
-      if (mouseY < 578 && mouseY > 476 && tiles[4][7] == false) {// [4][7]
-        //rect(0,0,100,100);
-        if (mode != 0) {
+      if (mouseY < 578 && mouseY > 476) {// [4][7]
+        if (mode == -1) {
+          digUp(770, 490);
+          mode = 0;
+          return;
+        }
+        else if (mode != 0 && tiles[4][7] == false) {
           if (createPlant(770, 490, 0, 100, mode, 4, 7)) {
             tiles[4][7] = true;
             return;
@@ -629,42 +744,65 @@ void mouseClicked() {
       }
     }
     if (mouseX > 865 && mouseX < 975) { // is the mouse cursor in colulm 9 
-      if (mouseY > 80 && mouseY < 175 && tiles[0][8] == false) { // [0][8]
-        if (mode != 0) {
+      if (mouseY > 80 && mouseY < 175) { // [0][8]
+        if (mode == -1) {
+          digUp(885, 90);
+          mode = 0;
+          return;
+        }
+        else if (mode != 0 && tiles[0][8] == false) {
           if (createPlant(885, 90, 0, 100, mode, 0, 8)) {
             tiles[0][8] = true;
             return;
           }
         }
       }
-      if (mouseY > 175 && mouseY < 278 && tiles[1][8] == false) { // [1][8]
-        if (mode != 0) {
+      if (mouseY > 175 && mouseY < 278) { // [1][8]
+         if (mode == -1) {
+          digUp(885, 190);
+          mode = 0;
+          return;
+        }
+        else if (mode != 0 && tiles[1][8] == false) {
           if (createPlant(885, 190, 0, 100, mode, 1, 8)) {
             tiles[1][8] = true;
             return;
           }
         }
       }
-      if (mouseY > 287 && mouseY < 387 && tiles[2][8] == false) { // [2][8]
-        if (mode != 0) {
+      if (mouseY > 287 && mouseY < 387) { // [2][8]
+        if (mode == -1) {
+          digUp(885, 290);
+          mode = 0;
+          return;
+        }
+        else if (mode != 0 && tiles[2][8] == false) {
           if (createPlant(885, 290, 0, 100, mode, 2, 8)) {
             tiles[2][8] = true;
             return;
           }
         }
       }
-      if (mouseY < 476 && mouseY > 378 && tiles[3][8] == false) {// [3][8]
-        //rect(0,0,00,100);
-        if (mode != 0) {
+      if (mouseY < 476 && mouseY > 378) {// [3][8]
+        if (mode == -1) {
+          digUp(885, 390);
+          mode = 0;
+          return;
+        }
+        else if (mode != 0 && tiles[3][8] == false) {
           if (createPlant(885, 390, 0, 100, mode, 3, 8)) {
             tiles[3][8] = true;
             return;
           }
         }
       }
-      if (mouseY < 578 && mouseY > 476 && tiles[4][8] == false) {// [4][8]
-        //rect(0,0,100,100);
-        if (mode != 0) {
+      if (mouseY < 578 && mouseY > 476) {// [4][8]
+        if (mode == -1) {
+          digUp(885, 490);
+          mode = 0;
+          return;
+        }
+        else if (mode != 0 && tiles[4][8] == false) {
           if (createPlant(885, 490, 0, 100, mode, 4, 8)) {
             tiles[4][8] = true;
             return;

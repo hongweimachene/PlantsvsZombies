@@ -22,6 +22,7 @@ int sunTime; // time between sunflower light
 int sunFall; // time for sunlight from the sky 
 int mode; // -1 = shovel / 0  = not holding seed / 1 = holding sunFlower / 2 = holding peaShooter / 3 = holding walnut 
 void setup() {
+  screen = 0;
   tiles = new boolean[5][9];
   divis = false; 
   mode = 0;
@@ -202,6 +203,14 @@ void draw() {
   }
   if (screen == 1){
     image(end,0,0);
+    //fill (255);
+    //rect(350, 378, 300, 100);
+    textSize(50);
+    fill (255,0,0);
+    text("Click to try again", 300, 450);
+    if (mousePressed && dist(550,500,mouseX,mouseY) < 100){
+      screen = 0;
+    }
   }
 }
 void mouseClicked() {

@@ -6,6 +6,7 @@ PImage PeaShooterSeed;
 PImage picZomb;
 PImage shovel;
 PImage mower;
+PImage end;
 ArrayList<Plants> plant;
 ArrayList<Bullet> ammo;
 ArrayList<Sunlight> light;
@@ -13,6 +14,7 @@ ArrayList<Zombies> zombie;
 ArrayList<Lawnmower> lawnmow; 
 boolean[][] tiles;
 boolean divis;
+int screen; // 0 = game // 1 = end screen 
 int zombiesKilled;
 int wave;
 int sunMoney; // currency 
@@ -25,6 +27,8 @@ void setup() {
   mode = 0;
   sunTime = 0;
   sunFall = 50;
+  end = loadImage("endScreen.png");
+  end.resize(1000,600);
   shovel = loadImage("dig.png");
   shovel.resize(70, 70);
   nutSeed = loadImage("wallNutSeed.png");
@@ -81,6 +85,7 @@ void setup() {
 } 
 
 void draw() {
+  if (screen == 0){
   sunTime += 1;
   sunFall += 1;
   if (sunFall == 500){
@@ -160,8 +165,7 @@ void draw() {
   spawn5();
   for (int i = 0; i < zombie.size(); i++) {
     if (zombie.get(i).x + 45 < 0) {
-      zombie.remove(i);
-      i --;
+      screen = 1;
     } else if (zombie.get(i).health <= 0) {
       zombie.remove(i);
       i --;
@@ -195,6 +199,10 @@ void draw() {
   textSize(20); 
   text("Zombies Killed: " + zombiesKilled, 710, 20);
   text("Wave: " + wave, 710, 45);
+  }
+  if (screen == 1){
+    image(end,0,0);
+  }
 }
 void mouseClicked() {
   if (dist(mouseX, mouseY, 195, 30) < 40 && mode == 0) {

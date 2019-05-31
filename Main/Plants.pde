@@ -34,13 +34,35 @@ class peaShooter extends Plants {
     //rect(x,y,10,10);
   }
   void attack() {
-    if (time == 100) {
+    if (time > 100){ //&& isZombie(this.fakeY)){
       greenPea b = new greenPea(x + 60, y + 20, 10);
       ammo.add(b);
       time = 0;
-    } else {
-      time +=1;
+    } //else if (time == 100 && isZombie(fakeY) == false){
+    //}
+    else {
+      time += 1;
     }
+  }
+  boolean isZombie(int y) {
+    for (int index = 0; index < zombie.size(); index ++) {
+      if (y == 0 && zombie.get(index).y == 50.0) {
+        return true;
+      }
+      if (y == 1 && zombie.get(index).y == 155.0) {
+        return true;
+      }
+      if (y == 2 && zombie.get(index).y == 255.0) {
+        return true;
+      }
+      if (y == 3 && zombie.get(index).y == 353.0) {
+        return true;
+      }
+      if (y == 4 && zombie.get(index).y == 455.0) {
+        return true;
+      }
+    }
+    return false;
   }
   void giveSun() {
   }
@@ -72,20 +94,20 @@ class sunFlower extends Plants {
   void attack() {
   }
 }
-  class wallNut extends Plants {
-    PImage nut;
-    wallNut(int x, int y, int damage, int health, int fakeX, int fakeY) {
-      super (x, y, damage, health, fakeX, fakeY);
-      nut = loadImage("wallNut.png");
-      nut.resize(80, 80);
-    }
-    void display() {
-      image(nut, x, y);
-    }
-    void giveSun() {
-      return;
-    }
-    void attack() {
-      return;
-    }
+class wallNut extends Plants {
+  PImage nut;
+  wallNut(int x, int y, int damage, int health, int fakeX, int fakeY) {
+    super (x, y, damage, health, fakeX, fakeY);
+    nut = loadImage("wallNut.png");
+    nut.resize(80, 80);
   }
+  void display() {
+    image(nut, x, y);
+  }
+  void giveSun() {
+    return;
+  }
+  void attack() {
+    return;
+  }
+}

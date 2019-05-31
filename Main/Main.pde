@@ -176,6 +176,7 @@ void draw() {
       zombiesKilled++;
     } else {
       zombie.get(i).display();
+      if (frameCount % 30 == 0) zombie.get(i).speed = random(.5,2.1); 
       if (!zombie.get(i).onTopOfPlant()) zombie.get(i).move();
       if (frameCount % 50 == 0) zombie.get(i).dealDamage();
       zombie.get(i).takeDamage();

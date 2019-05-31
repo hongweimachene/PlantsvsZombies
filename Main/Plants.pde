@@ -27,14 +27,15 @@ class peaShooter extends Plants {
     time = (int)random(80);
   }
   void display() {
-    textSize(20);
+    textSize(40);
     fill(255);
-    text(health, x+ 10, y -10 );
+    text(fakeX,x + 20,y - 30);
     image(green, x, y);
+    
     //rect(x,y,10,10);
   }
   void attack() {
-    if (time > 100){ //&& isZombie(this.fakeY)){
+    if (time > 100 && isZombie(fakeX)){
       greenPea b = new greenPea(x + 60, y + 20, 10);
       ammo.add(b);
       time = 0;

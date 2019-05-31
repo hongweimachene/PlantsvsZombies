@@ -27,9 +27,9 @@ class peaShooter extends Plants {
     time = (int)random(80);
   }
   void display() {
-    textSize(40);
+    //textSize(40);
     fill(255);
-    text(fakeX,x + 20,y - 30);
+    //text(fakeX,x + 20,y - 30);
     image(green, x, y);
     
     //rect(x,y,10,10);

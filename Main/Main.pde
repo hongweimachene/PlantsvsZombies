@@ -885,47 +885,69 @@ void digUp(int x, int y) {
   }
 }
 
-void spawn7() {
-  int s = millis();
-  if (s % (int)random(800, 2001) == 0) {
-    Zombies z = new Zombies(950, 50, 50, 10, random(.5, 2.1));
-    zombie.add(z);
-  }
-}
-
 void spawn1() {
   int s = millis();
+  int r = (int) random(1,11);
   if (s % (int)random(800, 2001) == 0) {
-    Zombies z = new Zombies(950, 50, 50, 10, random(.5, 2.1));
-    zombie.add(z);
+    if (r > 3){
+      Zombies z = new Zombies(950, 50, 50, 10, random(.5, 2.1));
+      zombie.add(z);
+    } else {
+      bucketZomb z = new bucketZomb(950, 50, 50, 10, random(.5, 2.1));
+      zombie.add(z);
+    }
   }
 }
 void spawn2() {
   int s = millis();
+  int r = (int) random(1,11);
   if (s % (int)random(1000, 2001) == 0) {
-    Zombies z = new Zombies(950, 155, 50, 10, random(.5, 2.1));
-    zombie.add(z);
+    if (r > 3){
+      Zombies z = new Zombies(950, 50, 50, 10, random(.5, 2.1));
+      zombie.add(z);
+    } else {
+      bucketZomb z = new bucketZomb(950, 50, 50, 10, random(.5, 2.1));
+      zombie.add(z);
+    }
   }
 }
 void spawn3() {
   int s = millis();
+  int r = (int) random(1,11);
   if (s % (int)random(1000, 2001) == 0) {
-    Zombies z = new Zombies(950, 255, 50, 10, random(.5, 2.1));
-    zombie.add(z);
+    if (r > 3){
+      Zombies z = new Zombies(950, 50, 50, 10, random(.5, 2.1));
+      zombie.add(z);
+    } else {
+      bucketZomb z = new bucketZomb(950, 50, 50, 10, random(.5, 2.1));
+      zombie.add(z);
+    }
   }
 }
 void spawn4() {
   int s = millis();
+  int r = (int) random(1,11);
   if (s % (int)random(1000, 2001) == 0) {
-    Zombies z = new Zombies(950, 353, 50, 10, random(.5, 2.1));
-    zombie.add(z);
+    if (r > 3){
+      Zombies z = new Zombies(950, 50, 50, 10, random(.5, 2.1));
+      zombie.add(z);
+    } else {
+      bucketZomb z = new bucketZomb(950, 50, 50, 10, random(.5, 2.1));
+      zombie.add(z);
+    }
   }
 }
 void spawn5() {
   int s = millis();
+  int r = (int) random(1,11);
   if (s % (int)random(1000, 2001) == 0) {
-    Zombies z = new Zombies(950, 455, 50, 10, random(.5, 2.1));
-    zombie.add(z);
+    if (r > 3){
+      Zombies z = new Zombies(950, 50, 50, 10, random(.5, 2.1));
+      zombie.add(z);
+    } else {
+      bucketZomb z = new bucketZomb(950, 50, 50, 10, random(.5, 2.1));
+      zombie.add(z);
+    }
   }
 }
  void spawnMower(){

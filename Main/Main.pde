@@ -36,7 +36,7 @@ void setup() {
   nutSeed = loadImage("wallNutSeed.png");
   nutSeed.resize(100, 70);
   buckethead = loadImage("bucket.png");
-  buckethead.resize(80,120);
+  buckethead.resize(100,160);
   zombiesKilled = 0; 
   wave = 0;
   shine = loadImage("sunlight.png");
@@ -169,7 +169,7 @@ void draw() {
   spawn5();
   for (int i = 0; i < zombie.size(); i++) {
     if (zombie.get(i).x + 45 < 0) {
-      screen = 1;
+      //screen = 1;
     } else if (zombie.get(i).health <= 0) {
       zombie.remove(i);
       i --;
@@ -885,6 +885,7 @@ void digUp(int x, int y) {
   }
 }
 
+
 void spawn1() {
   int s = millis();
   int r = (int) random(1,11);
@@ -893,7 +894,7 @@ void spawn1() {
       Zombies z = new Zombies(950, 50, 50, 10, random(.5, 2.1));
       zombie.add(z);
     } else {
-      bucketZomb z = new bucketZomb(950, 50, 50, 10, random(.5, 2.1));
+      bucketZomb z = new bucketZomb(950, 20, 100, 10, random(.5, 2.1));
       zombie.add(z);
     }
   }
@@ -903,10 +904,10 @@ void spawn2() {
   int r = (int) random(1,11);
   if (s % (int)random(1000, 2001) == 0) {
     if (r > 3){
-      Zombies z = new Zombies(950, 50, 50, 10, random(.5, 2.1));
+      Zombies z = new Zombies(950, 155, 50, 10, random(.5, 2.1));
       zombie.add(z);
     } else {
-      bucketZomb z = new bucketZomb(950, 50, 50, 10, random(.5, 2.1));
+      bucketZomb z = new bucketZomb(950, 125, 100, 10, random(.5, 2.1));
       zombie.add(z);
     }
   }
@@ -916,10 +917,10 @@ void spawn3() {
   int r = (int) random(1,11);
   if (s % (int)random(1000, 2001) == 0) {
     if (r > 3){
-      Zombies z = new Zombies(950, 50, 50, 10, random(.5, 2.1));
-      zombie.add(z);
+    Zombies z = new Zombies(950, 255, 50, 10, random(.5, 2.1));
+    zombie.add(z);
     } else {
-      bucketZomb z = new bucketZomb(950, 50, 50, 10, random(.5, 2.1));
+      bucketZomb z = new bucketZomb(950, 225, 100, 10, random(.5, 2.1));
       zombie.add(z);
     }
   }
@@ -929,10 +930,10 @@ void spawn4() {
   int r = (int) random(1,11);
   if (s % (int)random(1000, 2001) == 0) {
     if (r > 3){
-      Zombies z = new Zombies(950, 50, 50, 10, random(.5, 2.1));
-      zombie.add(z);
+    Zombies z = new Zombies(950, 353, 50, 10, random(.5, 2.1));
+    zombie.add(z);
     } else {
-      bucketZomb z = new bucketZomb(950, 50, 50, 10, random(.5, 2.1));
+      bucketZomb z = new bucketZomb(950, 323, 100, 10, random(.5, 2.1));
       zombie.add(z);
     }
   }
@@ -942,10 +943,10 @@ void spawn5() {
   int r = (int) random(1,11);
   if (s % (int)random(1000, 2001) == 0) {
     if (r > 3){
-      Zombies z = new Zombies(950, 50, 50, 10, random(.5, 2.1));
-      zombie.add(z);
+    Zombies z = new Zombies(950, 455, 50, 10, random(.5, 2.1));
+    zombie.add(z);
     } else {
-      bucketZomb z = new bucketZomb(950, 50, 50, 10, random(.5, 2.1));
+      bucketZomb z = new bucketZomb(950, 425, 100, 10, random(.5, 2.1));
       zombie.add(z);
     }
   }

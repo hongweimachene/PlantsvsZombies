@@ -58,3 +58,12 @@ class Zombies{
     }
   }
 }
+
+class bucketZomb extends Zombies{
+  bucketZomb(float x, float y, int health, int damage, float speed){
+    super(x,y,health,damage,speed);
+  }
+  void display(){
+    image(buckethead,x,y);
+  }
+}

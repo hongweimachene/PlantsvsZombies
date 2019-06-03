@@ -36,7 +36,7 @@ void setup() {
   nutSeed = loadImage("wallNutSeed.png");
   nutSeed.resize(100, 70);
   buckethead = loadImage("bucket.png");
-  buckethead.resize(80,12);
+  buckethead.resize(80,120);
   zombiesKilled = 0; 
   wave = 0;
   shine = loadImage("sunlight.png");
@@ -884,6 +884,15 @@ void digUp(int x, int y) {
     }
   }
 }
+
+void spawn7() {
+  int s = millis();
+  if (s % (int)random(800, 2001) == 0) {
+    Zombies z = new Zombies(950, 50, 50, 10, random(.5, 2.1));
+    zombie.add(z);
+  }
+}
+
 void spawn1() {
   int s = millis();
   if (s % (int)random(800, 2001) == 0) {

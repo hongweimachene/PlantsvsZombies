@@ -1,6 +1,5 @@
 class Zombies{
   int health,damage;
-  PImage pic;
   float x, y, speed;
   
   Zombies(float x, float y, int health, int damage, float speed) {
@@ -25,6 +24,7 @@ class Zombies{
  
   
   void takeDamage(){
+    picZomb.updatePixels();
     for (int i = 0; i < ammo.size(); i++){
       Bullet check = ammo.get(i);
       if (dist(check.x,check.y,x+30,y+60) < 25){

@@ -211,7 +211,7 @@ void draw() {
     textSize(50);
     fill (255,0,0);
     text("Click to try again", 300, 450);
-    if (mousePressed && dist(550,500,mouseX,mouseY) < 100){
+    if (mousePressed && dist(550,500,mouseX,mouseY) < 1000){
       screen = 0;
       setup();
     }
@@ -888,7 +888,7 @@ void digUp(int x, int y) {
 void spawn1() {
   int s = millis();
   int r = (int) random(1,11);
-  if (s % (int)random(800, 2001) == 0) {
+  if (s % (int)random(1400, 2101) == 0) {
     if (r > 3){
       Zombies z = new Zombies(950, 50, 50, 10, random(.5, 2.1));
       zombie.add(z);
@@ -901,7 +901,7 @@ void spawn1() {
 void spawn2() {
   int s = millis();
   int r = (int) random(1,11);
-  if (s % (int)random(1000, 2001) == 0) {
+  if (s % (int)random(1400, 2101) == 0) {
     if (r > 3){
       Zombies z = new Zombies(950, 155, 50, 10, random(.5, 2.1));
       zombie.add(z);
@@ -914,7 +914,7 @@ void spawn2() {
 void spawn3() {
   int s = millis();
   int r = (int) random(1,11);
-  if (s % (int)random(1000, 2001) == 0) {
+  if (s % (int)random(1400, 2101) == 0) {
     if (r > 3){
     Zombies z = new Zombies(950, 255, 50, 10, random(.5, 2.1));
     zombie.add(z);
@@ -927,7 +927,7 @@ void spawn3() {
 void spawn4() {
   int s = millis();
   int r = (int) random(1,11);
-  if (s % (int)random(1000, 2001) == 0) {
+  if (s % (int)random(1400, 2101) == 0) {
     if (r > 3){
     Zombies z = new Zombies(950, 353, 50, 10, random(.5, 2.1));
     zombie.add(z);
@@ -940,7 +940,7 @@ void spawn4() {
 void spawn5() {
   int s = millis();
   int r = (int) random(1,11);
-  if (s % (int)random(1000, 2001) == 0) {
+  if (s % (int)random(1400, 2101) == 0) {
     if (r > 3){
     Zombies z = new Zombies(950, 455, 50, 10, random(.5, 2.1));
     zombie.add(z);

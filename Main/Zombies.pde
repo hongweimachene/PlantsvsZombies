@@ -90,7 +90,7 @@ class bucketZomb extends Zombies{
   
   boolean onTopOfPlant(){
     for (Plants i: plant){
-      if (dist(i.x,i.y,x,y+90) < 40){
+      if (dist(i.x,i.y,x+30,y+90) < 40){
         return true;
       }
     }
@@ -98,7 +98,7 @@ class bucketZomb extends Zombies{
   }
   
   boolean isNextToPlant(Plants i){
-    if (dist(i.x,i.y,this.x,this.y+90) < 40){
+    if (dist(i.x,i.y,this.x+30,this.y+90) < 40){
        return true;
     }
     return false;

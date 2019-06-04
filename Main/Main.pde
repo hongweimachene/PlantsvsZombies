@@ -167,7 +167,7 @@ void draw() {
   spawn5();
   for (int i = 0; i < zombie.size(); i++) {
     if (zombie.get(i).x + 45 < 0) {
-      //screen = 1;
+      screen = 1;
     } else if (zombie.get(i).health <= 0) {
       zombie.remove(i);
       i --;

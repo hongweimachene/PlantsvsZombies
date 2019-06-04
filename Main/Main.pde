@@ -119,9 +119,7 @@ void draw() {
       i--;
     } else {
       lawnmow.get(i).display();
-      if (lawnmow.get(i).touch == false) {
-        lawnmow.get(i).trigger();
-      } else {
+      if (lawnmow.get(i).touch == true) {
         lawnmow.get(i).runOver();
       }
     }
@@ -180,6 +178,7 @@ void draw() {
       if (!zombie.get(i).onTopOfPlant()) zombie.get(i).move();
       if (frameCount % 50 == 0) zombie.get(i).dealDamage();
       zombie.get(i).takeDamage();
+      zombie.get(i).trigger(); 
     }
   }
   if (mode == 1) {

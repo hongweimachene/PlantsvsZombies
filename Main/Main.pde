@@ -17,7 +17,6 @@ boolean[][] tiles;
 boolean divis;
 int screen; // 0 = game // 1 = end screen 
 int zombiesKilled;
-int wave;
 int sunMoney; // currency 
 int sunTime; // time between sunflower light 
 int sunFall; // time for sunlight from the sky 
@@ -40,7 +39,6 @@ void setup() {
   buckethead = loadImage("bucket.png");
   buckethead.resize(100,160);
   zombiesKilled = 0; 
-  wave = 0;
   shine = loadImage("sunlight.png");
   shine.resize(70, 70);
   PeaShooterSeed = loadImage("peaShooterSeed.png");
@@ -102,13 +100,17 @@ void draw() {
   zomTime += 1;
   image(image, -180, 0);
   fill(135, 54, 0);
-  rect(0, 0, 555, 80);
+  rect(0, 0, 555, 87);
+  fill(214, 234, 248);
   image(SunSeed, 140, 0);
+  text("50", 170, 85);
   image(PeaShooterSeed, 240, 0);
+  text("100", 270, 85);
   //if (zombiesKilled > 0 && zombiesKilled % 20 == 0){
   //  wave++;
   //}
   image(nutSeed, 340, 0);
+  text("50", 370, 85);
   image(shovel, 440, 0);
   for (int i = 0; i < plant.size(); i++) {
     if (plant.get(i).health <= 0) {
@@ -163,13 +165,13 @@ void draw() {
   textSize(50);
   fill(214, 234, 248);
   text(sunMoney, 10, 60);
-  if (zomTime > 600){
+  if (zomTime > 1000){
   spawn1();
   spawn2();
   spawn3();
   spawn4();
   spawn5();
-  zomTime = 601;
+  zomTime = 1001;
   }
   for (int i = 0; i < zombie.size(); i++) {
     if (zombie.get(i).x + 45 < 0) {
@@ -207,8 +209,7 @@ void draw() {
   rect(700, 0, 300, 50);
   fill(0);
   textSize(20); 
-  text("Zombies Killed: " + zombiesKilled, 710, 20);
-  //text("Wave: " + wave, 710, 45);
+  text("Zombies Killed: " + zombiesKilled, 710, 30);
   }
   if (screen == 1){
     image(end,0,0);
@@ -863,8 +864,8 @@ boolean createPlant(int x, int y, int damage, int health, int type, int fakeX, i
     mode = 0;
     return true;
   }
-  if (type == 2){ //&& sunMoney >= 100) {
-    //sunMoney -= 100;
+  if (type == 2 && sunMoney >= 100) {
+    sunMoney -= 100;
     peaShooter b = new peaShooter (x, y, damage, health, fakeX, fakeY);
     plant.add(b);
     mode = 0;
@@ -894,12 +895,12 @@ void digUp(int x, int y) {
 void spawn1() {
   int s = millis();
   int r = (int) random(1,11);
-  if (s % (int)random(1400, 2101) == 0) {
-    if (r > 3){
+  if (s % (int)random(1800, 2501) == 0) {
+    if (r > 2){
       Zombies z = new Zombies(950, 50, 50, 10, random(.5, 2.1));
       zombie.add(z);
     } else {
-      bucketZomb z = new bucketZomb(950, 20, 100, 10, random(.5, 2.1));
+      bucketZomb z = new bucketZomb(950, 20, 130, 20, random(.5, 2.1));
       zombie.add(z);
     }
   }
@@ -907,12 +908,12 @@ void spawn1() {
 void spawn2() {
   int s = millis();
   int r = (int) random(1,11);
-  if (s % (int)random(1400, 2101) == 0) {
-    if (r > 3){
+  if (s % (int)random(1800, 2501) == 0) {
+    if (r > 2){
       Zombies z = new Zombies(950, 155, 50, 10, random(.5, 2.1));
       zombie.add(z);
     } else {
-      bucketZomb z = new bucketZomb(950, 125, 100, 10, random(.5, 2.1));
+      bucketZomb z = new bucketZomb(950, 125, 130, 20, random(.5, 2.1));
       zombie.add(z);
     }
   }
@@ -920,12 +921,12 @@ void spawn2() {
 void spawn3() {
   int s = millis();
   int r = (int) random(1,11);
-  if (s % (int)random(1400, 2101) == 0) {
-    if (r > 3){
+  if (s % (int)random(1800, 2501) == 0) {
+    if (r > 2){
     Zombies z = new Zombies(950, 255, 50, 10, random(.5, 2.1));
     zombie.add(z);
     } else {
-      bucketZomb z = new bucketZomb(950, 225, 100, 10, random(.5, 2.1));
+      bucketZomb z = new bucketZomb(950, 225, 130, 20, random(.5, 2.1));
       zombie.add(z);
     }
   }
@@ -933,12 +934,12 @@ void spawn3() {
 void spawn4() {
   int s = millis();
   int r = (int) random(1,11);
-  if (s % (int)random(1400, 2101) == 0) {
-    if (r > 3){
+  if (s % (int)random(1800, 2501) == 0) {
+    if (r > 2){
     Zombies z = new Zombies(950, 353, 50, 10, random(.5, 2.1));
     zombie.add(z);
     } else {
-      bucketZomb z = new bucketZomb(950, 323, 100, 10, random(.5, 2.1));
+      bucketZomb z = new bucketZomb(950, 323, 130, 20, random(.5, 2.1));
       zombie.add(z);
     }
   }
@@ -946,12 +947,12 @@ void spawn4() {
 void spawn5() {
   int s = millis();
   int r = (int) random(1,11);
-  if (s % (int)random(1400, 2101) == 0) {
-    if (r > 3){
+  if (s % (int)random(1800, 2501) == 0) {
+    if (r > 2){
     Zombies z = new Zombies(950, 455, 50, 10, random(.5, 2.1));
     zombie.add(z);
     } else {
-      bucketZomb z = new bucketZomb(950, 425, 100, 10, random(.5, 2.1));
+      bucketZomb z = new bucketZomb(950, 425, 130, 20, random(.5, 2.1));
       zombie.add(z);
     }
   }

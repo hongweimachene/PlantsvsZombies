@@ -47,19 +47,19 @@ class peaShooter extends Plants {
   }
   boolean isZombie(int y) {
     for (int index = 0; index < zombie.size(); index ++) {
-      if (y == 0 && zombie.get(index).y == 50.0) {
+      if (y == 0 && (zombie.get(index).y == 50.0 || zombie.get(index).y == 20.0)) {
         return true;
       }
-      if (y == 1 && zombie.get(index).y == 155.0) {
+      if (y == 1 && (zombie.get(index).y == 155.0 || zombie.get(index).y == 125.0)) {
         return true;
       }
-      if (y == 2 && zombie.get(index).y == 255.0) {
+      if (y == 2 && (zombie.get(index).y == 255.0 ||zombie.get(index).y == 225.0)) {
         return true;
       }
-      if (y == 3 && zombie.get(index).y == 353.0) {
+      if (y == 3 && (zombie.get(index).y == 353.0 || zombie.get(index).y == 323.0)) {
         return true;
       }
-      if (y == 4 && zombie.get(index).y == 455.0) {
+      if (y == 4 && (zombie.get(index).y == 455.0 || zombie.get(index).y == 425.0)) {
         return true;
       }
     }

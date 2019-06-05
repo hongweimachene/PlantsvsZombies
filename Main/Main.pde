@@ -17,7 +17,6 @@ boolean[][] tiles;
 boolean divis;
 int screen; // 0 = game // 1 = end screen 
 int zombiesKilled;
-int wave;
 int sunMoney; // currency 
 int sunTime; // time between sunflower light 
 int sunFall; // time for sunlight from the sky 
@@ -163,13 +162,13 @@ void draw() {
   textSize(50);
   fill(214, 234, 248);
   text(sunMoney, 10, 60);
-  if (zomTime > 600){
+  if (zomTime > 1000){
   spawn1();
   spawn2();
   spawn3();
   spawn4();
   spawn5();
-  zomTime = 601;
+  zomTime = 1001;
   }
   for (int i = 0; i < zombie.size(); i++) {
     if (zombie.get(i).x + 45 < 0) {
@@ -207,8 +206,7 @@ void draw() {
   rect(700, 0, 300, 50);
   fill(0);
   textSize(20); 
-  text("Zombies Killed: " + zombiesKilled, 710, 20);
-  text("Wave: " + wave, 710, 45);
+  text("Zombies Killed: " + zombiesKilled, 710, 30);
   }
   if (screen == 1){
     image(end,0,0);
@@ -894,7 +892,7 @@ void digUp(int x, int y) {
 void spawn1() {
   int s = millis();
   int r = (int) random(1,11);
-  if (s % (int)random(1400, 2101) == 0) {
+  if (s % (int)random(1800, 2501) == 0) {
     if (r > 2){
       Zombies z = new Zombies(950, 50, 50, 10, random(.5, 2.1));
       zombie.add(z);
@@ -907,7 +905,7 @@ void spawn1() {
 void spawn2() {
   int s = millis();
   int r = (int) random(1,11);
-  if (s % (int)random(1400, 2101) == 0) {
+  if (s % (int)random(1800, 2501) == 0) {
     if (r > 2){
       Zombies z = new Zombies(950, 155, 50, 10, random(.5, 2.1));
       zombie.add(z);
@@ -920,7 +918,7 @@ void spawn2() {
 void spawn3() {
   int s = millis();
   int r = (int) random(1,11);
-  if (s % (int)random(1400, 2101) == 0) {
+  if (s % (int)random(1800, 2501) == 0) {
     if (r > 2){
     Zombies z = new Zombies(950, 255, 50, 10, random(.5, 2.1));
     zombie.add(z);
@@ -933,7 +931,7 @@ void spawn3() {
 void spawn4() {
   int s = millis();
   int r = (int) random(1,11);
-  if (s % (int)random(1400, 2101) == 0) {
+  if (s % (int)random(1800, 2501) == 0) {
     if (r > 2){
     Zombies z = new Zombies(950, 353, 50, 10, random(.5, 2.1));
     zombie.add(z);
@@ -946,7 +944,7 @@ void spawn4() {
 void spawn5() {
   int s = millis();
   int r = (int) random(1,11);
-  if (s % (int)random(1400, 2101) == 0) {
+  if (s % (int)random(1800, 2501) == 0) {
     if (r > 2){
     Zombies z = new Zombies(950, 455, 50, 10, random(.5, 2.1));
     zombie.add(z);

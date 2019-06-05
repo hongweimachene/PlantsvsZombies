@@ -1,9 +1,9 @@
 # PlantsvsZombies
 
 How to Play the Game:  
-You have to defend each of he five lanes by placing down plants to defeat incoming zombies. Once a zombie reaches the end of a lane, the lawnmower will trigger and kill any zombie in its way. However, if a zombie manages to get to the end of a lane without a lawnmower, the player loses. You can place the sunflower, which generates currency over time, the peashooter, which damages the zombies, and the wallnut, which you use to tank the damage from incoming zombies. There are two types of zombies: normal, and buckethead zombies. Buckethead zombies are harder to kill and deal more damage. This is an infinite game, kill as many zombies as possible without losing.   
+You have to defend each of he five lanes by placing down plants to defeat incoming zombies. Once a zombie reaches the end of a lane, the lawnmower will trigger and kill any zombie in its way. However, if a zombie manages to get to the end of a lane without a lawnmower, the player loses. You can place the sunflower, which generates currency over time, the peashooter, which damages the zombies, and the wallnut, which you use to tank the damage from incoming zombies. Each plant costs different amounts of money. There are two types of zombies: normal, and buckethead zombies. Buckethead zombies are harder to kill and deal more damage. This is an infinite game, kill as many zombies as possible without losing.   
 
-Development Log     
+Development Log - Hong Wei  
 
 5/20/19   
 Started project:  

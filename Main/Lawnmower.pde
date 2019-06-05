@@ -15,7 +15,7 @@ class Lawnmower{
   void runOver(){
     move();
     for (int i = 0; i < zombie.size(); i++){
-      if (dist(x+40,y+60,zombie.get(i).x+30, zombie.get(i).y+60) < 25){
+      if (dist(x+40,y+60,zombie.get(i).x+30, zombie.get(i).y+60) < 50){
         zombie.remove(i);
       }
     }
@@ -23,13 +23,5 @@ class Lawnmower{
   
   void move(){
     x+=speed;
-  }
-  
-  void trigger(){
-    for (int i = 0; i < zombie.size(); i++){
-      if (dist(x+40,y+60,zombie.get(i).x+30, zombie.get(i).y+60) < 25){
-        touch = true;
-      }
-    }
   }
 }

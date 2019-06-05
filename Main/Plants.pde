@@ -28,7 +28,7 @@ class peaShooter extends Plants {
   }
   void display() {
     //textSize(40);
-    fill(255);
+    //fill(255);
     //text(fakeX,x + 20,y - 30);
     image(green, x, y);
     
@@ -79,9 +79,9 @@ class sunFlower extends Plants {
     time = 0;
   }
   void display() {
-    textSize(20);
-    fill(255);
-    text(health, x+ 10, y-10 );
+    //textSize(20);
+    //fill(255);
+    //text(health, x+ 10, y-10 );
     image(sun, x, y);
   }
   void giveSun() {

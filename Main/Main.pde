@@ -22,12 +22,14 @@ int sunMoney; // currency
 int sunTime; // time between sunflower light 
 int sunFall; // time for sunlight from the sky 
 int mode; // -1 = shovel / 0  = not holding seed / 1 = holding sunFlower / 2 = holding peaShooter / 3 = holding walnut 
+int zomTime; // time to start spawning zombies 
 void setup() {
   screen = 0;
   tiles = new boolean[5][9];
   divis = false; 
   mode = 0;
   sunTime = 0;
+  zomTime = 0;
   sunFall = 50;
   end = loadImage("endScreen.png");
   end.resize(1000,600);
@@ -36,7 +38,7 @@ void setup() {
   nutSeed = loadImage("wallNutSeed.png");
   nutSeed.resize(100, 70);
   buckethead = loadImage("bucket.png");
-  buckethead.resize(80,12);
+  buckethead.resize(100,160);
   zombiesKilled = 0; 
   wave = 0;
   shine = loadImage("sunlight.png");
@@ -97,6 +99,7 @@ void draw() {
     light.add(s);
     sunFall = 0;
   }
+  zomTime += 1;
   image(image, -180, 0);
   fill(135, 54, 0);
   rect(0, 0, 555, 80);
@@ -119,9 +122,7 @@ void draw() {
       i--;
     } else {
       lawnmow.get(i).display();
-      if (lawnmow.get(i).touch == false) {
-        lawnmow.get(i).trigger();
-      } else {
+      if (lawnmow.get(i).touch == true) {
         lawnmow.get(i).runOver();
       }
     }
@@ -162,11 +163,14 @@ void draw() {
   textSize(50);
   fill(214, 234, 248);
   text(sunMoney, 10, 60);
+  if (zomTime > 600){
   spawn1();
   spawn2();
   spawn3();
   spawn4();
   spawn5();
+  zomTime = 601;
+  }
   for (int i = 0; i < zombie.size(); i++) {
     if (zombie.get(i).x + 45 < 0) {
       screen = 1;
@@ -180,6 +184,7 @@ void draw() {
       if (!zombie.get(i).onTopOfPlant()) zombie.get(i).move();
       if (frameCount % 50 == 0) zombie.get(i).dealDamage();
       zombie.get(i).takeDamage();
+      zombie.get(i).trigger(); 
     }
   }
   if (mode == 1) {
@@ -212,7 +217,7 @@ void draw() {
     textSize(50);
     fill (255,0,0);
     text("Click to try again", 300, 450);
-    if (mousePressed && dist(550,500,mouseX,mouseY) < 100){
+    if (mousePressed && dist(550,500,mouseX,mouseY) < 1000){
       screen = 0;
       setup();
     }
@@ -851,23 +856,23 @@ void mouseClicked() {
   }
 }
 boolean createPlant(int x, int y, int damage, int health, int type, int fakeX, int fakeY) { // 1: sunflower 2: peashooter
-  if (type == 1){ //&& sunMoney >= 50) {
-    //sunMoney -= 50;
+  if (type == 1 && sunMoney >= 50) {
+    sunMoney -= 50;
     sunFlower b = new sunFlower (x, y, damage, health, fakeX, fakeY);
     plant.add(b);
     mode = 0;
     return true;
   }
-  if (type == 2){ //&& sunMoney >= 100) {
-    //sunMoney -= 100;
+  if (type == 2 && sunMoney >= 100) {
+    sunMoney -= 100;
     peaShooter b = new peaShooter (x, y, damage, health, fakeX, fakeY);
     plant.add(b);
     mode = 0;
     return true;
   }
-  if (type == 3){ //&& sunMoney >= 50) {
-    //sunMoney -= 50;
-    wallNut b = new wallNut (x, y, damage, 1000, fakeX, fakeY);
+  if (type == 3 && sunMoney >= 50) {
+    sunMoney -= 50;
+    wallNut b = new wallNut (x, y, damage, 300, fakeX, fakeY);
     plant.add(b);
     mode = 0;
     return true;
@@ -884,39 +889,71 @@ void digUp(int x, int y) {
     }
   }
 }
+
+
 void spawn1() {
   int s = millis();
-  if (s % (int)random(800, 2001) == 0) {
-    Zombies z = new Zombies(950, 50, 50, 10, random(.5, 2.1));
-    zombie.add(z);
+  int r = (int) random(1,11);
+  if (s % (int)random(1400, 2101) == 0) {
+    if (r > 3){
+      Zombies z = new Zombies(950, 50, 50, 10, random(.5, 2.1));
+      zombie.add(z);
+    } else {
+      bucketZomb z = new bucketZomb(950, 20, 100, 10, random(.5, 2.1));
+      zombie.add(z);
+    }
   }
 }
 void spawn2() {
   int s = millis();
-  if (s % (int)random(1000, 2001) == 0) {
-    Zombies z = new Zombies(950, 155, 50, 10, random(.5, 2.1));
-    zombie.add(z);
+  int r = (int) random(1,11);
+  if (s % (int)random(1400, 2101) == 0) {
+    if (r > 3){
+      Zombies z = new Zombies(950, 155, 50, 10, random(.5, 2.1));
+      zombie.add(z);
+    } else {
+      bucketZomb z = new bucketZomb(950, 125, 100, 10, random(.5, 2.1));
+      zombie.add(z);
+    }
   }
 }
 void spawn3() {
   int s = millis();
-  if (s % (int)random(1000, 2001) == 0) {
+  int r = (int) random(1,11);
+  if (s % (int)random(1400, 2101) == 0) {
+    if (r > 3){
     Zombies z = new Zombies(950, 255, 50, 10, random(.5, 2.1));
     zombie.add(z);
+    } else {
+      bucketZomb z = new bucketZomb(950, 225, 100, 10, random(.5, 2.1));
+      zombie.add(z);
+    }
   }
 }
 void spawn4() {
   int s = millis();
-  if (s % (int)random(1000, 2001) == 0) {
+  int r = (int) random(1,11);
+  if (s % (int)random(1400, 2101) == 0) {
+    if (r > 3){
     Zombies z = new Zombies(950, 353, 50, 10, random(.5, 2.1));
     zombie.add(z);
+    } else {
+      bucketZomb z = new bucketZomb(950, 323, 100, 10, random(.5, 2.1));
+      zombie.add(z);
+    }
   }
 }
 void spawn5() {
   int s = millis();
-  if (s % (int)random(1000, 2001) == 0) {
+  int r = (int) random(1,11);
+  if (s % (int)random(1400, 2101) == 0) {
+    if (r > 3){
     Zombies z = new Zombies(950, 455, 50, 10, random(.5, 2.1));
     zombie.add(z);
+    } else {
+      bucketZomb z = new bucketZomb(950, 425, 100, 10, random(.5, 2.1));
+      zombie.add(z);
+    }
   }
 }
  void spawnMower(){

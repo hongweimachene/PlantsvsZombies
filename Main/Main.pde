@@ -39,7 +39,6 @@ void setup() {
   buckethead = loadImage("bucket.png");
   buckethead.resize(100,160);
   zombiesKilled = 0; 
-  wave = 0;
   shine = loadImage("sunlight.png");
   shine.resize(70, 70);
   PeaShooterSeed = loadImage("peaShooterSeed.png");
@@ -101,13 +100,17 @@ void draw() {
   zomTime += 1;
   image(image, -180, 0);
   fill(135, 54, 0);
-  rect(0, 0, 555, 80);
+  rect(0, 0, 555, 87);
+  fill(214, 234, 248);
   image(SunSeed, 140, 0);
+  text("50", 170, 85);
   image(PeaShooterSeed, 240, 0);
+  text("100", 270, 85);
   //if (zombiesKilled > 0 && zombiesKilled % 20 == 0){
   //  wave++;
   //}
   image(nutSeed, 340, 0);
+  text("50", 370, 85);
   image(shovel, 440, 0);
   for (int i = 0; i < plant.size(); i++) {
     if (plant.get(i).health <= 0) {

@@ -53,7 +53,7 @@ class Zombies{
   void dealDamage(){
     for (int i = 0; i < plant.size(); i++){
       if (isNextToPlant(plant.get(i))){
-        plant.get(i).takeDamage(10);
+        plant.get(i).takeDamage(damage);
       }
     }
   }
@@ -106,7 +106,7 @@ class bucketZomb extends Zombies{
   void dealDamage(){
     for (int i = 0; i < plant.size(); i++){
       if (isNextToPlant(plant.get(i))){
-        plant.get(i).takeDamage(10);
+        plant.get(i).takeDamage(damage);
       }
     }
   }

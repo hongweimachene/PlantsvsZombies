@@ -208,7 +208,7 @@ void draw() {
   fill(0);
   textSize(20); 
   text("Zombies Killed: " + zombiesKilled, 710, 20);
-  text("Wave: " + wave, 710, 45);
+  //text("Wave: " + wave, 710, 45);
   }
   if (screen == 1){
     image(end,0,0);
@@ -863,8 +863,8 @@ boolean createPlant(int x, int y, int damage, int health, int type, int fakeX, i
     mode = 0;
     return true;
   }
-  if (type == 2 && sunMoney >= 100) {
-    sunMoney -= 100;
+  if (type == 2){ //&& sunMoney >= 100) {
+    //sunMoney -= 100;
     peaShooter b = new peaShooter (x, y, damage, health, fakeX, fakeY);
     plant.add(b);
     mode = 0;

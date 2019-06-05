@@ -3,8 +3,6 @@
 How to Play the Game:  
 You have to defend each of he five lanes by placing down plants to defeat incoming zombies. Once a zombie reaches the end of a lane, the lawnmower will trigger and kill any zombie in its way. However, if a zombie manages to get to the end of a lane without a lawnmower, the player loses. You can place the sunflower, which generates currency over time, the peashooter, which damages the zombies, and the wallnut, which you use to tank the damage from incoming zombies. There are two types of zombies: normal, and buckethead zombies. Buckethead zombies are harder to kill and deal more damage. This is an infinite game, kill as many zombies as possible without losing.   
 
-Note: Game currently has no currency cost for demonstration purposes  
-
 Development Log     
 
 5/20/19   
@@ -56,8 +54,8 @@ JacK: fixed peashooter bug, endgame screen works
 Hong Wei: Added buckethead class, added buckethead draw, display, and spawn, fixed hitboxes for buckethead zombie for bullets  
 
 6/4/19   
-Hong Wei: Transferred trigger methods to zombie, fixed buckethead zombie checkbox for plants to deal damage, fixed hitbox to trigger lawnmowers for buckethead, reduced zombie spawning, restart screen now works  
-Jack: added zombie spawn timer for delay, removed all text used for testing  
+Hong Wei: Transferred trigger methods to zombie, fixed buckethead zombie checkbox for plants to deal damage, fixed hitbox to trigger lawnmowers for buckethead, reduced zombie spawning, restart screen now works, displayed cost of plants, fixed bug where peashooter doesn't target buckethead zombies, buckethead has more health, more damage, less chance of spawning, increase zombie spawn delay    
+Jack: added zombie spawn timer for delay, removed all text used for testing, peashooters dont shoot when no zombie is in lane    
 
 
 
